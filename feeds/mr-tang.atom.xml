@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/mr-tang.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-12T15:20:35+08:00</updated><entry><title>java常见方法总结</title><link href="http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html" rel="alternate"></link><updated>2016-07-12T15:20:35+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:java/java常见方法总结.html</id><summary type="html">&lt;h2 id="java"&gt;java常见方法总结&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="1"&gt;1.指定随机数的生成范围&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public int getRandomRangeNum(int start,int end){
+   int result=start+(int)(Math.random()*(end-start));
+   return result;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary></entry><entry><title>Mysql常见一些操作语句</title><link href="http://newDreamA.github.io/mybatis/MySQL%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5.html" rel="alternate"></link><updated>2016-07-12T14:50:40+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:mybatis/MySQL常用语句.html</id><summary type="html">&lt;h2 id="mysql"&gt;Mysql常见一些操作语句&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h5 id="1"&gt;1. 创建数据库的：&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;span class="caps"&gt;CREATE&lt;/span&gt; &lt;span class="caps"&gt;DATABASE&lt;/span&gt; &lt;span class="caps"&gt;IF&lt;/span&gt; &lt;span class="caps"&gt;NOT&lt;/span&gt; &lt;span class="caps"&gt;EXISTS&lt;/span&gt; auth &lt;span class="caps"&gt;DEFAULT&lt;/span&gt; &lt;span class="caps"&gt;CHARSET&lt;/span&gt; utf8 &lt;span class="caps"&gt;COLLATE&lt;/span&gt;&amp;nbsp;utf8_general_ci;&lt;/p&gt;
+&lt;h5 id="2"&gt;2. 自增类型定义:&lt;a class="headerlink" href="#2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;auto_increment&lt;/p&gt;
+&lt;h5 id="3"&gt;3. 时间日期的格式化：&lt;a class="headerlink" href="#3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;DATE_FORMAT(time,&amp;#8217;%y-%m-%d %T&amp;#8217;)&lt;br /&gt;
+mySql的日期格式化示例： DATE_FORMAT(date,&amp;nbsp;format)   &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;select&amp;nbsp;date_format(now(),&amp;#8217;%y-%m-%d&amp;#8217;);&lt;/li&gt;
+&lt;li&gt;format参数说明：&lt;/li&gt;
+&lt;li&gt;%S, %s 两位数字形式的秒（ 00,01, &amp;#8230;,&amp;nbsp;59）&lt;/li&gt;
+&lt;li&gt;%I, %i 两位数字形式的分（ 00,01, &amp;#8230;,&amp;nbsp;59）&lt;/li&gt;
+&lt;li&gt;%H 两位数字形式的小时，24 小时（00,01, &amp;#8230;,&amp;nbsp;23）&lt;/li&gt;
+&lt;li&gt;%h 两位数字形式的小时，12 小时（01,02, &amp;#8230;,&amp;nbsp;12）&lt;/li&gt;
+&lt;li&gt;%k 数字形式的小时，24 小时（0,1, &amp;#8230;,&amp;nbsp;23）&lt;/li&gt;
+&lt;li&gt;%l 数字形式的小时，12 小时（1, 2, &amp;#8230;,&amp;nbsp;12）&lt;/li&gt;
+&lt;li&gt;%T 24&amp;nbsp;小时的时间形式（hh:mm:ss）&lt;/li&gt;
+&lt;li&gt;%r 12 小时的时间形式（hh:mm:ss &lt;span class="caps"&gt;AM&lt;/span&gt; 或hh:mm:ss &lt;span class="caps"&gt;PM&lt;/span&gt;）&lt;/li&gt;
+&lt;li&gt;%p &lt;span class="caps"&gt;AM&lt;/span&gt;或&lt;span class="caps"&gt;PM&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;%W 一周中每一天的名称（Sunday, Monday, &amp;#8230;,&amp;nbsp;Saturday）&lt;/li&gt;
+&lt;li&gt;%a 一周中每一天名称的缩写（Sun, Mon, &amp;#8230;,&amp;nbsp;Sat）&lt;/li&gt;
+&lt;li&gt;%d 两位数字表示月中的天数（00, 01,&amp;#8230;,&amp;nbsp;31）&lt;/li&gt;
+&lt;li&gt;%e 数字形式表示月中的天数（1, 2， &amp;#8230;,&amp;nbsp;31）&lt;/li&gt;
+&lt;li&gt;%D 英文后缀表示月中的天数（1st, 2nd,&amp;nbsp;3rd,&amp;#8230;）&lt;/li&gt;
+&lt;li&gt;%w 以数字形式表示周中的天数（ 0 = Sunday, 1=Monday, &amp;#8230;,&amp;nbsp;6=Saturday）&lt;/li&gt;
+&lt;li&gt;%j 以三位数字表示年中的天数（ 001, 002, &amp;#8230;,&amp;nbsp;366）&lt;/li&gt;
+&lt;li&gt;%U 周（0, 1, 52），其中Sunday&amp;nbsp;为周中的第一天&lt;/li&gt;
+&lt;li&gt;%u 周（0, 1, 52），其中Monday&amp;nbsp;为周中的第一天&lt;/li&gt;
+&lt;li&gt;%M 月名（January, February, &amp;#8230;,&amp;nbsp;December）&lt;/li&gt;
+&lt;li&gt;%b 缩写的月名（ January, February,&amp;#8230;.,&amp;nbsp;December）&lt;/li&gt;
+&lt;li&gt;%m 两位数字表示的月份（01, 02, &amp;#8230;,&amp;nbsp;12）&lt;/li&gt;
+&lt;li&gt;%c 数字表示的月份（1, 2, &amp;#8230;.,&amp;nbsp;12）&lt;/li&gt;
+&lt;li&gt;%Y&amp;nbsp;四位数字表示的年份&lt;/li&gt;
+&lt;li&gt;%y&amp;nbsp;两位数字表示的年份&lt;/li&gt;
+&lt;li&gt;%%&amp;nbsp;直接值“%”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="4"&gt;4.插入数据检查数据是否存在：&lt;a class="headerlink" href="#4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;当记录不存在的时插入，当记录存在时更新&lt;br /&gt;
+ 在insert中使用 &lt;span class="caps"&gt;ON&lt;/span&gt; &lt;span class="caps"&gt;DUPLICATE&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt; &lt;span class="caps"&gt;UPDATE&lt;/span&gt; &lt;/p&gt;
+&lt;h5 id="5-datetime"&gt;5. 解决datetime类型的比较问题，&lt;a class="headerlink" href="#5-datetime" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;使用STR_TO_DATE函数，例如  add_time &amp;gt;=STR_TO_DATE(&amp;#8216;2016-06-28 13:22:12&amp;#8217;,&amp;#8217;%Y-%m-%d&amp;nbsp;%H:%i:%s&amp;#8217;)&lt;/p&gt;
+&lt;h5 id="6"&gt;6. 删除原先主键，重新生成主键&lt;a class="headerlink" href="#6" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;span class="caps"&gt;ALTER&lt;/span&gt; &lt;span class="caps"&gt;TABLE&lt;/span&gt; table_name
+&lt;span class="caps"&gt;ADD&lt;/span&gt; &lt;span class="caps"&gt;COLUMN&lt;/span&gt; id  &lt;span class="caps"&gt;INT&lt;/span&gt;(11) &lt;span class="caps"&gt;NOT&lt;/span&gt; &lt;span class="caps"&gt;NULL&lt;/span&gt; AUTO_INCREMENT &lt;span class="caps"&gt;AFTER&lt;/span&gt; name_field,
+&lt;span class="caps"&gt;DROP&lt;/span&gt; &lt;span class="caps"&gt;PRIMARY&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt;,
+&lt;span class="caps"&gt;ADD&lt;/span&gt; &lt;span class="caps"&gt;PRIMARY&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt;&amp;nbsp;(id);&lt;/p&gt;</summary></entry><entry><title>java错误归纳</title><link href="http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93.html" rel="alternate"></link><updated>2016-07-12T14:39:32+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:java/java常见错误总结.html</id><summary type="html">&lt;h2 id="java"&gt;java错误归纳&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;使用BigDecimal的divide时候要设置精确的小数点，不然在除不尽的时候会抛出java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal&amp;nbsp;result. &lt;/li&gt;
+&lt;li&gt;Integer能使用等于号的范围是-128~127&lt;/li&gt;
+&lt;/ol&gt;</summary></entry><entry><title>SCSS的环境配置</title><link href="http://newDreamA.github.io/react/scss%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html" rel="alternate"></link><updated>2016-07-12T11:04:38+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:react/scss环境搭建.html</id><summary type="html">&lt;h2 id="scss"&gt;&lt;span class="caps"&gt;SCSS&lt;/span&gt;的环境配置&lt;a class="headerlink" href="#scss" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h5 id="_1"&gt;外部依赖说明&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;node的版本：node-v0.12.8-x64&lt;/li&gt;
+&lt;li&gt;ruby的版本:rubyinstaller_V2.2.2.95_setup&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id="nodejs"&gt;node安装所需要的js文件&lt;a class="headerlink" href="#nodejs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;以下这些最好安装到项目的目录文件夹下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;node install gulp&amp;nbsp;-g&lt;/li&gt;
+&lt;li&gt;node install&amp;nbsp;gulp-util&lt;/li&gt;
+&lt;li&gt;node install&amp;nbsp;gulp-ruby-sass&lt;/li&gt;
+&lt;li&gt;node install&amp;nbsp;gulp-autoprefixer&lt;/li&gt;
+&lt;li&gt;gem install sass&amp;nbsp;这是ruby的命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id="_2"&gt;本地的配置文件&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;与scss同级目录下，先建立一个gulpfile.js文件&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; use strict;
+ var gulp = require(&amp;#39;gulp&amp;#39;);
+ var sass = require(&amp;#39;gulp-ruby-sass&amp;#39;);
+ var autoprefixer = require(&amp;#39;gulp-autoprefixer&amp;#39;);
+
+ gulp.task(&amp;#39;default&amp;#39;, function () {
+   return sass(&amp;#39;scss/*.scss&amp;#39;, { style: &amp;#39;compressed&amp;#39;, noCache: true })
+   .on(&amp;#39;error&amp;#39;, function (err) {
+   console.error(&amp;#39;Error!&amp;#39;, err.message);
+})
+   .pipe(autoprefixer())
+   .pipe(gulp.dest(&amp;#39;css/&amp;#39;));
+});
+
+  gulp.task(&amp;#39;watch&amp;#39;, function () {
+  gulp.watch(&amp;#39;scss/*.scss&amp;#39;, [&amp;#39;default&amp;#39;]);
+});
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;然后命令行当前目录切换到存放gulp.js的目录下后，执行gulp。&lt;/p&gt;</summary></entry><entry><title>springBoot与MyBatis整合示例</title><link href="http://newDreamA.github.io/springboot/springBoot%E4%B8%8EMyBatis%E6%95%B4%E5%90%88%E7%A4%BA%E4%BE%8B.html" rel="alternate"></link><updated>2016-06-11T16:02:00+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-06-11:springboot/springBoot与MyBatis整合示例.html</id><summary type="html">&lt;h1 id="springbootmybatis"&gt;springBoot与MyBatis整合示例&lt;a class="headerlink" href="#springbootmybatis" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h3 id="mybatis"&gt;MyBatis的配置的一般步骤：&lt;a class="headerlink" href="#mybatis" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;数据源的配置&lt;/li&gt;
+&lt;li&gt;配置MyBatis的映射xml&lt;/li&gt;
+&lt;li&gt;配置mybatis的sqlSessionFactory&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="mybatisjar"&gt;Mybatis的相关jar&lt;a class="headerlink" href="#mybatisjar" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;以下是gradle的引jar的包的方式：&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;complie &amp;quot;org.springframework.boot:
+spring-boot-starter-jdbc:1.2.3.RELEASE&amp;quot;
+compile &amp;quot;org.mybatis:mybatis:3.2.8&amp;quot;
+compile &amp;quot;org.mybatis:mybatis-spring:1.2.1&amp;quot;
+compile &amp;quot;com.alibaba:druid:1.0.13&amp;quot;
+compile &amp;quot;mysql:mysql-connector-java:5.1.35&amp;quot;
+compile &amp;quot;com.alibaba:fastjson:1.1.41&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;使用springBoot的最大好处是可以使用javaConfig来配置属性，其实它类似与spring中的xml配置，在springBoot中可以使用yml文件来配置一些属性，下面就是用yml来配置数据源和mybatis的xml映射关系的：application.yml,配置如下：&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;druid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;dataSource&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;driverClassName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;jdbc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Driver&lt;/span&gt;
+    &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;jdbc&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;://&lt;/span&gt;&lt;span class="n"&gt;localhost&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3306&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;
+    &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;root&lt;/span&gt;
+    &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; 
+    &lt;span class="n"&gt;initialSize&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
+    &lt;span class="n"&gt;maxActive&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;
+    &lt;span class="n"&gt;minIdle&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
+    &lt;span class="n"&gt;maxWait&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;60000&lt;/span&gt;
+    &lt;span class="n"&gt;validationQuery&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SELECT&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;DUAL&lt;/span&gt;
+    &lt;span class="n"&gt;removeAbandoned&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+    &lt;span class="n"&gt;removeAbandonedTimeout&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;180&lt;/span&gt;
+    &lt;span class="n"&gt;mapperLocations&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;classpath&lt;/span&gt;&lt;span class="o"&gt;*:&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;mapper&lt;/span&gt;&lt;span class="o"&gt;.*/&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;Mapper&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;xml&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;以下是javaConfig的配置&lt;/p&gt;
+&lt;p&gt;1.首先创建个DataSourceSettings来加载数据库的来源：&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;com.alibaba.druid.pool.DruidDataSource&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.boot.context.properties.&lt;/span&gt;
+&lt;span class="n"&gt;ConfigurationProperties&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="o"&gt;/**&lt;/span&gt;
+ &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;Created&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;tangxiewen&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="mi"&gt;2016&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mf"&gt;31.&lt;/span&gt;
+ &lt;span class="o"&gt;*/&lt;/span&gt;
+&lt;span class="nd"&gt;@ConfigurationProperties&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prefix&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;       &lt;span class="n"&gt;DataSourceSettings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PREFIX&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;DataSourceSettings&lt;/span&gt; &lt;span class="n"&gt;extends&lt;/span&gt;     &lt;span class="n"&gt;DruidDataSource&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;static&lt;/span&gt; &lt;span class="n"&gt;final&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;PREFIX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;druid.dataSource&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;mapperLocations&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;getMapperLocations&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;mapperLocations&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;void&lt;/span&gt; &lt;span class="n"&gt;setMapperLocations&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;mapperLocations&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mapperLocations&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mapperLocations&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;2.在创建个DataSourceAutoConfiguration用于注册SqlSessionFactoryBean，源码如下：&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.mybatis.spring.SqlSessionFactoryBean&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.mybatis.spring.annotation.MapperScan&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.slf4j.Logger&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.slf4j.LoggerFactory&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;  &lt;span class="nn"&gt;org.springframework.beans.factory.annotation.Autowired&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.boot.context.properties.EnableConfigurationProperties&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.context.ApplicationContext&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.context.annotation.Bean&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;  &lt;span class="nn"&gt;org.springframework.context.annotation.Configuration&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.io.IOException&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="o"&gt;/**&lt;/span&gt;
+ &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;Created&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;tangxiewen&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="mi"&gt;2016&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mf"&gt;31.&lt;/span&gt;
+ &lt;span class="o"&gt;*/&lt;/span&gt;
+    &lt;span class="nd"&gt;@Configuration&lt;/span&gt;
+&lt;span class="nd"&gt;@MapperScan&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;basePackages&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;com.mapper&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="nd"&gt;@EnableConfigurationProperties&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;DataSourceSettings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;DataSourceAutoConfiguration&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;static&lt;/span&gt; &lt;span class="n"&gt;final&lt;/span&gt; &lt;span class="n"&gt;Logger&lt;/span&gt; &lt;span class="n"&gt;logger&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;    &lt;span class="n"&gt;LoggerFactory&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getLogger&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;DataSourceAutoConfiguration&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="nd"&gt;@Autowired&lt;/span&gt;
+&lt;span class="n"&gt;DataSourceSettings&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="nd"&gt;@Bean&lt;/span&gt;
+&lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;SqlSessionFactoryBean&lt;/span&gt; &lt;span class="n"&gt;sqlSessionFactory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ApplicationContext&lt;/span&gt; &lt;span class="n"&gt;applicationContext&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;throws&lt;/span&gt; &lt;span class="n"&gt;IOException&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;SqlSessionFactoryBean&lt;/span&gt; &lt;span class="n"&gt;sqlSessionFactory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;SqlSessionFactoryBean&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;sqlSessionFactory&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setDataSource&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;sqlSessionFactory&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setMapperLocations&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;applicationContext&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getResources&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getMapperLocations&lt;/span&gt;&lt;span class="p"&gt;()));&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sqlSessionFactory&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;最后要在src/main/resources/创建一个&lt;span class="caps"&gt;META&lt;/span&gt;-&lt;span class="caps"&gt;INF&lt;/span&gt;文件夹在里面放置一个spring.factories文件，主要用于告知springBoot用我们的配置代替默认的配置                                         &lt;br /&gt;
+org.springframework.boot.autoconfigure.EnableAutoConfigur&amp;nbsp;ation=\com.jdbc.DataSourceAutoConfiguration&lt;/p&gt;
+&lt;p&gt;等于后面是类的全类名的形式即包名＋类名&lt;/p&gt;
+&lt;h3 id="_1"&gt;注意点&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;就是用使用myBatis时mapper中的java类和xml的包名要一致，还是就是用idea注意一下他的包结构，不然会报绑定错误！！！&lt;/p&gt;</summary></entry><entry><title>springBoot入门</title><link href="http://newDreamA.github.io/springboot/springBoot%E5%85%A5%E9%97%A8.html" rel="alternate"></link><updated>2016-06-10T00:00:00+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-06-10:springboot/springBoot入门.html</id><summary type="html"></summary></entry></feed>

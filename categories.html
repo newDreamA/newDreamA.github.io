@@ -1,52 +1,181 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-        <meta charset="utf-8" />
-        <title>MyBlog</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mr Tang" />
+        <meta name="copyright" content="Mr Tang" />
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">MyBlog </a></h1>
-                <nav><ul>
-                    <li><a href="/category/springboot.html">SpringBoot</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<ul>
-    <li><a href="/category/springboot.html">SpringBoot</a></li>
-</ul>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
+<meta property="og:title" content="All Categories · My Blog"/>
+<meta name="twitter:title" content="All Categories · My Blog">
+<meta property="og:url" content="http://newDreamA.github.io/categories.html" />
+<meta property="og:description" content="All categories of the My Blog blog" />
+<meta name="twitter:description" content="All categories of the My Blog blog">
+<meta property="og:site_name" content="My Blog" />
+<meta property="og:article:author" content="Mr Tang" />
+        <title>All Categories · My Blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="http://newDreamA.github.io/theme/css/style.min.css?7aeecf36">
+        <link rel="shortcut icon" href="http://newDreamA.github.io/theme/images/favicon.ico" type="image/x-icon" type="image/png" />
+        <link rel="icon" href="http://newDreamA.github.io/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="http://newDreamA.github.io/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://newDreamA.github.io/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://newDreamA.github.io/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="http://newDreamA.github.io/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://newDreamA.github.io/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="http://newDreamA.github.io/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://newDreamA.github.io/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="http://newDreamA.github.io/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link href="http://newDreamA.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="My Blog - Full Atom Feed" />
+
+        <link href="http://newDreamA.github.io/feeds/java.atom.xml" type="application/atom+xml" rel="alternate" title="My Blog - java Category Atom Feed" />
+        <link href="http://newDreamA.github.io/feeds/mybatis.atom.xml" type="application/atom+xml" rel="alternate" title="My Blog - MyBatis Category Atom Feed" />
+        <link href="http://newDreamA.github.io/feeds/react.atom.xml" type="application/atom+xml" rel="alternate" title="My Blog - react Category Atom Feed" />
+        <link href="http://newDreamA.github.io/feeds/springboot.atom.xml" type="application/atom+xml" rel="alternate" title="My Blog - springBoot Category Atom Feed" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://newDreamA.github.io/"><span class=site-name>My Blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="http://newDreamA.github.io">Home</a></li>
+                            <li  class="active"><a href="http://newDreamA.github.io/categories.html">Categories</a></li>
+                            <li ><a href="http://newDreamA.github.io/tags.html">Tags</a></li>
+                            <li ><a href="http://newDreamA.github.io/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="http://newDreamA.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                         </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="http://newDreamA.github.io/categories.html">All Categories</a></h1>
+    </header>
+</div>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
+
+<div class="row-fluid">
+    <div class="span8 offset2">
+        <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle list-of-categories" data-toggle="collapse" data-parent="#accordion2" href="#java-ref">
+                        java<span>2</span>
+                    </a>
+                </div>
+                <div id="java-ref" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <ul class="list-articles-category">
+ 
+                            <li><time pubdate="pubdate" datetime="2016-07-12T15:20:35+08:00">2016-07-12 15:20:35</time><a href="http://newDreamA.github.io/java/java常见方法总结.html">java常见方法总结  </a></li>
+ 
+                            <li><time pubdate="pubdate" datetime="2016-07-12T14:39:32+08:00">2016-07-12 14:39:32</time><a href="http://newDreamA.github.io/java/java常见错误总结.html">java错误归纳  </a></li>
                         </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle list-of-categories" data-toggle="collapse" data-parent="#accordion2" href="#mybatis-ref">
+                        MyBatis<span>1</span>
+                    </a>
+                </div>
+                <div id="mybatis-ref" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <ul class="list-articles-category">
+ 
+                            <li><time pubdate="pubdate" datetime="2016-07-12T14:50:40+08:00">2016-07-12 14:50:40</time><a href="http://newDreamA.github.io/mybatis/MySQL常用语句.html">Mysql常见一些操作语句  </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle list-of-categories" data-toggle="collapse" data-parent="#accordion2" href="#react-ref">
+                        react<span>1</span>
+                    </a>
+                </div>
+                <div id="react-ref" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <ul class="list-articles-category">
+ 
+                            <li><time pubdate="pubdate" datetime="2016-07-12T11:04:38+08:00">2016-07-12 11:04:38</time><a href="http://newDreamA.github.io/react/scss环境搭建.html"><span class="caps">SCSS</span>的环境配置  </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle list-of-categories" data-toggle="collapse" data-parent="#accordion2" href="#springboot-ref">
+                        springBoot<span>2</span>
+                    </a>
+                </div>
+                <div id="springboot-ref" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <ul class="list-articles-category">
+ 
+                            <li><time pubdate="pubdate" datetime="2016-06-11T16:02:00+08:00">2016-06-11 16:02:00</time><a href="http://newDreamA.github.io/springboot/springBoot与MyBatis整合示例.html">springBoot与MyBatis整合示例  </a></li>
+ 
+                            <li><time pubdate="pubdate" datetime="2016-06-10T00:00:00+08:00">2016-06-10 00:00:00</time><a href="http://newDreamA.github.io/springboot/springBoot入门.html">springBoot入门  </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+<script  language="javascript" type="text/javascript">
+    function uncollapse() {
+            $(window.location.hash).collapse({
+                toggle: true
+            })
+    }
+</script>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+<script type="text/javascript" language="JavaScript">
+    uncollapse(); 
+</script>
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
 </html>

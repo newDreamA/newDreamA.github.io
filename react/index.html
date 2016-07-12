@@ -10,14 +10,12 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta property="og:title" content="All Tags · My Blog"/>
-<meta name="twitter:title" content="All Tags · My Blog">
-<meta property="og:url" content="http://newDreamA.github.io/tags.html" />
-<meta property="og:description" content="All tags used in the My Blog blog" />
-<meta name="twitter:description" content="All tags used in the My Blog blog">
+<meta property="og:title" content=" Mr Tang博客"/>
+<meta name="twitter:title" content=" Mr Tang博客">
+<meta property="og:url" content="http://newDreamA.github.io" />
 <meta property="og:site_name" content="My Blog" />
 <meta property="og:article:author" content="Mr Tang" />
-        <title>All Tags · My Blog
+        <title>My Blog
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -33,7 +31,6 @@
         <link rel="apple-touch-icon" sizes="144x144" href="http://newDreamA.github.io/theme/images/apple-touch-icon-144x144.png" type="image/png" />
         <link rel="apple-touch-icon" sizes="152x152" href="http://newDreamA.github.io/theme/images/apple-touch-icon-152x152.png" type="image/png" />
         <link href="http://newDreamA.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="My Blog - Full Atom Feed" />
-
     </head>
     <body>
         <div id="content-sans-footer">
@@ -50,7 +47,7 @@
                         <ul class="nav pull-right top-menu">
                             <li ><a href="http://newDreamA.github.io">Home</a></li>
                             <li ><a href="http://newDreamA.github.io/categories.html">Categories</a></li>
-                            <li  class="active"><a href="http://newDreamA.github.io/tags.html">Tags</a></li>
+                            <li ><a href="http://newDreamA.github.io/tags.html">Tags</a></li>
                             <li ><a href="http://newDreamA.github.io/archives.html">Archives</a></li>
                             <li><form class="navbar-search" action="http://newDreamA.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                         </ul>
@@ -62,27 +59,46 @@
             <div class="row-fluid">
                 <div class="span1"></div>
                 <div class="span10">
-
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://newDreamA.github.io/tags.html">All Tags</a></h1>
+    <h1><a href="http://newDreamA.github.io"> Mr Tang博客</a></h1>
     </header>
-</div>
-<div class="row-fluid">
-    <div class="span8 offset2">
-        <form class="form-search">
-            <input type="text" class="input-medium search-query filterinput" placeholder="Find a tag">
-        </form>
-        <ul class="list-of-tags">
-        </ul>
+
+    <div class="row-fluid">
+        <div class="span8 offset2">
+            <header>
+            <h1 id="about-me">About me</h1>
+            </header>
+            <div class="article-content">
+                <div itemscope itemtype="http://schema.org/Person">
+        <p></p>
+        <p></p>
+        <p> </p></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="span8 offset2">
+            <header>
+            <h1 id="recent-posts">Recent Posts <a id="allposts" href="http://newDreamA.github.io/archives.html">all posts</a></h1>
+            </header>
+        <div class="recent-posts">
+            <article>
+                <a href="http://newDreamA.github.io/react/scss环境搭建.html"><span class="caps">SCSS</span>的环境配置  </a>
+                <section>
+                    posted in
+                <a href="http://newDreamA.github.io/categories.html#react-ref">react</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2016-07-12T11:04:38+08:00">2016-07-12 11:04:38</time>
+                </div>
+                </section>
+            </article>
+        </div>
+        </div>
     </div>
 </div>
-
-<div class="row-fluid">
-    <div class="span8 offset2">
-    </div>
-</div>
-
                 </div>
                 <div class="span1"></div>
             </div>
@@ -103,45 +119,6 @@
                 return (query.length > 0);
             }
         </script>
-
-
-<script>
-    (function ($) {
-        // custom css expression for a case-insensitive contains()
-        jQuery.expr[':'].Contains = function(a,i,m){
-            return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-        };
-
-        function listFilter() {
-
-            $('.filterinput')
-            .change( function () {
-                var filter = $(this).val();
-                if(filter) {
-                    // this finds all links in a list that contain the input,
-                    // and hide the ones not containing the input while showing the ones that do
-                    $('.list-of-tags').find("a:not(:Contains(" + filter + "))").parent().hide();
-                    $('.list-of-tags').find("a:Contains(" + filter + ")").parent().show();
-                    } else {
-                    $('.list-of-tags').find("li").show();
-                }
-                return false;
-            })
-            .keyup( function () {
-                // fire the above change event after every letter
-                $(this).change();
-            });
-        }
-
-        //ondomready
-        $(function () {
-            listFilter($());
-        });
-    }(jQuery));
-
-</script>
-
-
     </body>
     <!-- Theme: Elegant built for Pelican
     License : http://oncrashreboot.com/pelican-elegant -->

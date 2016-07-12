@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/react.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-12T11:04:38+08:00</updated><entry><title>SCSS的环境配置</title><link href="http://newDreamA.github.io/react/scss%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html" rel="alternate"></link><updated>2016-07-12T11:04:38+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:react/scss环境搭建.html</id><summary type="html">&lt;h2 id="scss"&gt;&lt;span class="caps"&gt;SCSS&lt;/span&gt;的环境配置&lt;a class="headerlink" href="#scss" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h5 id="_1"&gt;外部依赖说明&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;node的版本：node-v0.12.8-x64&lt;/li&gt;
+&lt;li&gt;ruby的版本:rubyinstaller_V2.2.2.95_setup&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id="nodejs"&gt;node安装所需要的js文件&lt;a class="headerlink" href="#nodejs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;以下这些最好安装到项目的目录文件夹下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;node install gulp&amp;nbsp;-g&lt;/li&gt;
+&lt;li&gt;node install&amp;nbsp;gulp-util&lt;/li&gt;
+&lt;li&gt;node install&amp;nbsp;gulp-ruby-sass&lt;/li&gt;
+&lt;li&gt;node install&amp;nbsp;gulp-autoprefixer&lt;/li&gt;
+&lt;li&gt;gem install sass&amp;nbsp;这是ruby的命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id="_2"&gt;本地的配置文件&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;与scss同级目录下，先建立一个gulpfile.js文件&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; use strict;
+ var gulp = require(&amp;#39;gulp&amp;#39;);
+ var sass = require(&amp;#39;gulp-ruby-sass&amp;#39;);
+ var autoprefixer = require(&amp;#39;gulp-autoprefixer&amp;#39;);
+
+ gulp.task(&amp;#39;default&amp;#39;, function () {
+   return sass(&amp;#39;scss/*.scss&amp;#39;, { style: &amp;#39;compressed&amp;#39;, noCache: true })
+   .on(&amp;#39;error&amp;#39;, function (err) {
+   console.error(&amp;#39;Error!&amp;#39;, err.message);
+})
+   .pipe(autoprefixer())
+   .pipe(gulp.dest(&amp;#39;css/&amp;#39;));
+});
+
+  gulp.task(&amp;#39;watch&amp;#39;, function () {
+  gulp.watch(&amp;#39;scss/*.scss&amp;#39;, [&amp;#39;default&amp;#39;]);
+});
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;然后命令行当前目录切换到存放gulp.js的目录下后，执行gulp。&lt;/p&gt;</summary></entry></feed>

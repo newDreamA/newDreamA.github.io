@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/java.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-12T15:20:35+08:00</updated><entry><title>java常见方法总结</title><link href="http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html" rel="alternate"></link><updated>2016-07-12T15:20:35+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:java/java常见方法总结.html</id><summary type="html">&lt;h2 id="java"&gt;java常见方法总结&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="1"&gt;1.指定随机数的生成范围&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public int getRandomRangeNum(int start,int end){
+   int result=start+(int)(Math.random()*(end-start));
+   return result;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary></entry><entry><title>java错误归纳</title><link href="http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93.html" rel="alternate"></link><updated>2016-07-12T14:39:32+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:java/java常见错误总结.html</id><summary type="html">&lt;h2 id="java"&gt;java错误归纳&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;使用BigDecimal的divide时候要设置精确的小数点，不然在除不尽的时候会抛出java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal&amp;nbsp;result. &lt;/li&gt;
+&lt;li&gt;Integer能使用等于号的范围是-128~127&lt;/li&gt;
+&lt;/ol&gt;</summary></entry></feed>
