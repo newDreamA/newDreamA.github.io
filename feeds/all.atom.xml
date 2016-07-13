@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/all.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-12T15:20:35+08:00</updated><entry><title>java常见方法总结</title><link href="http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html" rel="alternate"></link><updated>2016-07-12T15:20:35+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:java/java常见方法总结.html</id><summary type="html">&lt;h2 id="java"&gt;java常见方法总结&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/all.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-13T08:11:00+08:00</updated><entry><title>springBoot修改内置容器的端口号</title><link href="http://newDreamA.github.io/springboot/springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7.html" rel="alternate"></link><updated>2016-07-13T08:11:00+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-13:springboot/springBoot修改内置容器端口号.html</id><summary type="html">&lt;h2 id="springboot"&gt;SpringBoot修改内置容器的方法&lt;a class="headerlink" href="#springboot" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;第一个最简单的方法就是在application.yml配置，配置方法如下：&lt;/p&gt;
+&lt;p&gt;# Server settings
+     server:
+     port: 8080
+2. 实现EmbeddedServletContainerCustomizer的customize的方法&lt;br /&gt;&amp;nbsp;container.setPort(8000)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary><category term="springBoot"></category></entry><entry><title>java常见方法总结</title><link href="http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html" rel="alternate"></link><updated>2016-07-12T15:20:35+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:java/java常见方法总结.html</id><summary type="html">&lt;h2 id="java"&gt;java常见方法总结&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="1"&gt;1.指定随机数的生成范围&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
 2
@@ -9,7 +18,7 @@
    return result;
 }
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="java"></category></entry><entry><title>Mysql常见一些操作语句</title><link href="http://newDreamA.github.io/mybatis/MySQL%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5.html" rel="alternate"></link><updated>2016-07-12T14:50:40+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:mybatis/MySQL常用语句.html</id><summary type="html">&lt;h2 id="mysql"&gt;Mysql常见一些操作语句&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="java"></category></entry><entry><title>Mysql常见一些操作语句</title><link href="http://newDreamA.github.io/mysql/MySQL%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5.html" rel="alternate"></link><updated>2016-07-12T14:50:40+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:mysql/MySQL常用语句.html</id><summary type="html">&lt;h2 id="mysql"&gt;Mysql常见一些操作语句&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h5 id="1"&gt;1. 创建数据库的：&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;span class="caps"&gt;CREATE&lt;/span&gt; &lt;span class="caps"&gt;DATABASE&lt;/span&gt; &lt;span class="caps"&gt;IF&lt;/span&gt; &lt;span class="caps"&gt;NOT&lt;/span&gt; &lt;span class="caps"&gt;EXISTS&lt;/span&gt; auth &lt;span class="caps"&gt;DEFAULT&lt;/span&gt; &lt;span class="caps"&gt;CHARSET&lt;/span&gt; utf8 &lt;span class="caps"&gt;COLLATE&lt;/span&gt;&amp;nbsp;utf8_general_ci;&lt;/p&gt;
 &lt;h5 id="2"&gt;2. 自增类型定义:&lt;a class="headerlink" href="#2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/mysql.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-12T14:50:40+08:00</updated><entry><title>Mysql常见一些操作语句</title><link href="http://newDreamA.github.io/mysql/MySQL%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5.html" rel="alternate"></link><updated>2016-07-12T14:50:40+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:mysql/MySQL常用语句.html</id><summary type="html">&lt;h2 id="mysql"&gt;Mysql常见一些操作语句&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h5 id="1"&gt;1. 创建数据库的：&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;span class="caps"&gt;CREATE&lt;/span&gt; &lt;span class="caps"&gt;DATABASE&lt;/span&gt; &lt;span class="caps"&gt;IF&lt;/span&gt; &lt;span class="caps"&gt;NOT&lt;/span&gt; &lt;span class="caps"&gt;EXISTS&lt;/span&gt; auth &lt;span class="caps"&gt;DEFAULT&lt;/span&gt; &lt;span class="caps"&gt;CHARSET&lt;/span&gt; utf8 &lt;span class="caps"&gt;COLLATE&lt;/span&gt;&amp;nbsp;utf8_general_ci;&lt;/p&gt;
+&lt;h5 id="2"&gt;2. 自增类型定义:&lt;a class="headerlink" href="#2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;auto_increment&lt;/p&gt;
+&lt;h5 id="3"&gt;3. 时间日期的格式化：&lt;a class="headerlink" href="#3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;DATE_FORMAT(time,&amp;#8217;%y-%m-%d %T&amp;#8217;)&lt;br /&gt;
+mySql的日期格式化示例： DATE_FORMAT(date,&amp;nbsp;format)   &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;select&amp;nbsp;date_format(now(),&amp;#8217;%y-%m-%d&amp;#8217;);&lt;/li&gt;
+&lt;li&gt;format参数说明：&lt;/li&gt;
+&lt;li&gt;%S, %s 两位数字形式的秒（ 00,01, &amp;#8230;,&amp;nbsp;59）&lt;/li&gt;
+&lt;li&gt;%I, %i 两位数字形式的分（ 00,01, &amp;#8230;,&amp;nbsp;59）&lt;/li&gt;
+&lt;li&gt;%H 两位数字形式的小时，24 小时（00,01, &amp;#8230;,&amp;nbsp;23）&lt;/li&gt;
+&lt;li&gt;%h 两位数字形式的小时，12 小时（01,02, &amp;#8230;,&amp;nbsp;12）&lt;/li&gt;
+&lt;li&gt;%k 数字形式的小时，24 小时（0,1, &amp;#8230;,&amp;nbsp;23）&lt;/li&gt;
+&lt;li&gt;%l 数字形式的小时，12 小时（1, 2, &amp;#8230;,&amp;nbsp;12）&lt;/li&gt;
+&lt;li&gt;%T 24&amp;nbsp;小时的时间形式（hh:mm:ss）&lt;/li&gt;
+&lt;li&gt;%r 12 小时的时间形式（hh:mm:ss &lt;span class="caps"&gt;AM&lt;/span&gt; 或hh:mm:ss &lt;span class="caps"&gt;PM&lt;/span&gt;）&lt;/li&gt;
+&lt;li&gt;%p &lt;span class="caps"&gt;AM&lt;/span&gt;或&lt;span class="caps"&gt;PM&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;%W 一周中每一天的名称（Sunday, Monday, &amp;#8230;,&amp;nbsp;Saturday）&lt;/li&gt;
+&lt;li&gt;%a 一周中每一天名称的缩写（Sun, Mon, &amp;#8230;,&amp;nbsp;Sat）&lt;/li&gt;
+&lt;li&gt;%d 两位数字表示月中的天数（00, 01,&amp;#8230;,&amp;nbsp;31）&lt;/li&gt;
+&lt;li&gt;%e 数字形式表示月中的天数（1, 2， &amp;#8230;,&amp;nbsp;31）&lt;/li&gt;
+&lt;li&gt;%D 英文后缀表示月中的天数（1st, 2nd,&amp;nbsp;3rd,&amp;#8230;）&lt;/li&gt;
+&lt;li&gt;%w 以数字形式表示周中的天数（ 0 = Sunday, 1=Monday, &amp;#8230;,&amp;nbsp;6=Saturday）&lt;/li&gt;
+&lt;li&gt;%j 以三位数字表示年中的天数（ 001, 002, &amp;#8230;,&amp;nbsp;366）&lt;/li&gt;
+&lt;li&gt;%U 周（0, 1, 52），其中Sunday&amp;nbsp;为周中的第一天&lt;/li&gt;
+&lt;li&gt;%u 周（0, 1, 52），其中Monday&amp;nbsp;为周中的第一天&lt;/li&gt;
+&lt;li&gt;%M 月名（January, February, &amp;#8230;,&amp;nbsp;December）&lt;/li&gt;
+&lt;li&gt;%b 缩写的月名（ January, February,&amp;#8230;.,&amp;nbsp;December）&lt;/li&gt;
+&lt;li&gt;%m 两位数字表示的月份（01, 02, &amp;#8230;,&amp;nbsp;12）&lt;/li&gt;
+&lt;li&gt;%c 数字表示的月份（1, 2, &amp;#8230;.,&amp;nbsp;12）&lt;/li&gt;
+&lt;li&gt;%Y&amp;nbsp;四位数字表示的年份&lt;/li&gt;
+&lt;li&gt;%y&amp;nbsp;两位数字表示的年份&lt;/li&gt;
+&lt;li&gt;%%&amp;nbsp;直接值“%”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="4"&gt;4.插入数据检查数据是否存在：&lt;a class="headerlink" href="#4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;当记录不存在的时插入，当记录存在时更新&lt;br /&gt;
+ 在insert中使用 &lt;span class="caps"&gt;ON&lt;/span&gt; &lt;span class="caps"&gt;DUPLICATE&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt; &lt;span class="caps"&gt;UPDATE&lt;/span&gt; &lt;/p&gt;
+&lt;h5 id="5-datetime"&gt;5. 解决datetime类型的比较问题，&lt;a class="headerlink" href="#5-datetime" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;使用STR_TO_DATE函数，例如  add_time &amp;gt;=STR_TO_DATE(&amp;#8216;2016-06-28 13:22:12&amp;#8217;,&amp;#8217;%Y-%m-%d&amp;nbsp;%H:%i:%s&amp;#8217;)&lt;/p&gt;
+&lt;h5 id="6"&gt;6. 删除原先主键，重新生成主键&lt;a class="headerlink" href="#6" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;span class="caps"&gt;ALTER&lt;/span&gt; &lt;span class="caps"&gt;TABLE&lt;/span&gt; table_name
+&lt;span class="caps"&gt;ADD&lt;/span&gt; &lt;span class="caps"&gt;COLUMN&lt;/span&gt; id  &lt;span class="caps"&gt;INT&lt;/span&gt;(11) &lt;span class="caps"&gt;NOT&lt;/span&gt; &lt;span class="caps"&gt;NULL&lt;/span&gt; AUTO_INCREMENT &lt;span class="caps"&gt;AFTER&lt;/span&gt; name_field,
+&lt;span class="caps"&gt;DROP&lt;/span&gt; &lt;span class="caps"&gt;PRIMARY&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt;,
+&lt;span class="caps"&gt;ADD&lt;/span&gt; &lt;span class="caps"&gt;PRIMARY&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt;&amp;nbsp;(id);&lt;/p&gt;</summary><category term="mysql"></category></entry></feed>

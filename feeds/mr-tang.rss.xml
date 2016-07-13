@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Blog</title><link>http://newDreamA.github.io/</link><description></description><atom:link href="http://newDreamA.github.io/feeds/mr-tang.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 12 Jul 2016 15:20:35 +0800</lastBuildDate><item><title>java常见方法总结</title><link>http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html</link><description>&lt;h2 id="java"&gt;java常见方法总结&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Blog</title><link>http://newDreamA.github.io/</link><description></description><atom:link href="http://newDreamA.github.io/feeds/mr-tang.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 13 Jul 2016 08:11:00 +0800</lastBuildDate><item><title>springBoot修改内置容器的端口号</title><link>http://newDreamA.github.io/springboot/springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7.html</link><description>&lt;h2 id="springboot"&gt;SpringBoot修改内置容器的方法&lt;a class="headerlink" href="#springboot" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;第一个最简单的方法就是在application.yml配置，配置方法如下：&lt;/p&gt;
+&lt;p&gt;# Server settings
+     server:
+     port: 8080
+2. 实现EmbeddedServletContainerCustomizer的customize的方法&lt;br /&gt;&amp;nbsp;container.setPort(8000)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Wed, 13 Jul 2016 08:11:00 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-13:springboot/springBoot修改内置容器端口号.html</guid><category>springBoot</category></item><item><title>java常见方法总结</title><link>http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html</link><description>&lt;h2 id="java"&gt;java常见方法总结&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="1"&gt;1.指定随机数的生成范围&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
 2
@@ -9,7 +18,7 @@
    return result;
 }
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Tue, 12 Jul 2016 15:20:35 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-12:java/java常见方法总结.html</guid><category>java</category></item><item><title>Mysql常见一些操作语句</title><link>http://newDreamA.github.io/mybatis/MySQL%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5.html</link><description>&lt;h2 id="mysql"&gt;Mysql常见一些操作语句&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Tue, 12 Jul 2016 15:20:35 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-12:java/java常见方法总结.html</guid><category>java</category></item><item><title>Mysql常见一些操作语句</title><link>http://newDreamA.github.io/mysql/MySQL%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5.html</link><description>&lt;h2 id="mysql"&gt;Mysql常见一些操作语句&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h5 id="1"&gt;1. 创建数据库的：&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;span class="caps"&gt;CREATE&lt;/span&gt; &lt;span class="caps"&gt;DATABASE&lt;/span&gt; &lt;span class="caps"&gt;IF&lt;/span&gt; &lt;span class="caps"&gt;NOT&lt;/span&gt; &lt;span class="caps"&gt;EXISTS&lt;/span&gt; auth &lt;span class="caps"&gt;DEFAULT&lt;/span&gt; &lt;span class="caps"&gt;CHARSET&lt;/span&gt; utf8 &lt;span class="caps"&gt;COLLATE&lt;/span&gt;&amp;nbsp;utf8_general_ci;&lt;/p&gt;
 &lt;h5 id="2"&gt;2. 自增类型定义:&lt;a class="headerlink" href="#2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
@@ -55,7 +64,7 @@ mySql的日期格式化示例： DATE_FORMAT(date,&amp;nbsp;format)   &lt;/p&gt;
 &lt;p&gt;&lt;span class="caps"&gt;ALTER&lt;/span&gt; &lt;span class="caps"&gt;TABLE&lt;/span&gt; table_name
 &lt;span class="caps"&gt;ADD&lt;/span&gt; &lt;span class="caps"&gt;COLUMN&lt;/span&gt; id  &lt;span class="caps"&gt;INT&lt;/span&gt;(11) &lt;span class="caps"&gt;NOT&lt;/span&gt; &lt;span class="caps"&gt;NULL&lt;/span&gt; AUTO_INCREMENT &lt;span class="caps"&gt;AFTER&lt;/span&gt; name_field,
 &lt;span class="caps"&gt;DROP&lt;/span&gt; &lt;span class="caps"&gt;PRIMARY&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt;,
-&lt;span class="caps"&gt;ADD&lt;/span&gt; &lt;span class="caps"&gt;PRIMARY&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt;&amp;nbsp;(id);&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Tue, 12 Jul 2016 14:50:40 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-12:mybatis/MySQL常用语句.html</guid><category>mysql</category></item><item><title>java错误归纳</title><link>http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93.html</link><description>&lt;h2 id="java"&gt;java错误归纳&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;span class="caps"&gt;ADD&lt;/span&gt; &lt;span class="caps"&gt;PRIMARY&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt;&amp;nbsp;(id);&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Tue, 12 Jul 2016 14:50:40 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-12:mysql/MySQL常用语句.html</guid><category>mysql</category></item><item><title>java错误归纳</title><link>http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93.html</link><description>&lt;h2 id="java"&gt;java错误归纳&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;使用BigDecimal的divide时候要设置精确的小数点，不然在除不尽的时候会抛出java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal&amp;nbsp;result. &lt;/li&gt;
 &lt;li&gt;Integer能使用等于号的范围是-128~127&lt;/li&gt;
