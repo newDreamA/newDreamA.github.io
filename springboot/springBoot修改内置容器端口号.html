@@ -14,12 +14,12 @@
 
 <meta property="og:title" content="springBoot修改内置容器的端口号 "/>
 <meta property="og:url" content="http://newDreamA.github.io/springboot/springBoot修改内置容器端口号.html" />
-<meta property="og:description" content="SpringBoot修改内置容器的方法¶ 第一个最简单的方法就是在application.yml配置，配置方法如下： # Server settings server: port: 8080 2. 实现EmbeddedServletContainerCustomizer的customize的方法 container.setPort(8000)" />
+<meta property="og:description" content="SpringBoot修改内置容器的方法¶ 第一个最简单的方法就是在application.yml配置，配置方法如下： # Server settings server: port: 8080 实现EmbeddedServletContainerCustomizer的customize的方法 container.setPort(8000)" />
 <meta property="og:site_name" content="My Blog" />
 <meta property="og:article:author" content="Mr Tang" />
 <meta property="og:article:published_time" content="2016-07-13T08:11:00+08:00" />
 <meta name="twitter:title" content="springBoot修改内置容器的端口号 ">
-<meta name="twitter:description" content="SpringBoot修改内置容器的方法¶ 第一个最简单的方法就是在application.yml配置，配置方法如下： # Server settings server: port: 8080 2. 实现EmbeddedServletContainerCustomizer的customize的方法 container.setPort(8000)">
+<meta name="twitter:description" content="SpringBoot修改内置容器的方法¶ 第一个最简单的方法就是在application.yml配置，配置方法如下： # Server settings server: port: 8080 实现EmbeddedServletContainerCustomizer的customize的方法 container.setPort(8000)">
 
         <title>springBoot修改内置容器的端口号  · My Blog
 </title>
@@ -82,8 +82,10 @@
 <p>第一个最简单的方法就是在application.yml配置，配置方法如下：</p>
 <p># Server settings
      server:
-     port: 8080
-2. 实现EmbeddedServletContainerCustomizer的customize的方法<br />&nbsp;container.setPort(8000)</p>
+     port:&nbsp;8080</p>
+</li>
+<li>
+<p>实现EmbeddedServletContainerCustomizer的customize的方法<br />&nbsp;container.setPort(8000)</p>
 </li>
 </ol>
             <section>
