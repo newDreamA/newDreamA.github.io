@@ -9,8 +9,8 @@
    return result;
 }
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary></entry><entry><title>java错误归纳</title><link href="http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93.html" rel="alternate"></link><updated>2016-07-12T14:39:32+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:java/java常见错误总结.html</id><summary type="html">&lt;h2 id="java"&gt;java错误归纳&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="java"></category></entry><entry><title>java错误归纳</title><link href="http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93.html" rel="alternate"></link><updated>2016-07-12T14:39:32+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:java/java常见错误总结.html</id><summary type="html">&lt;h2 id="java"&gt;java错误归纳&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;使用BigDecimal的divide时候要设置精确的小数点，不然在除不尽的时候会抛出java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal&amp;nbsp;result. &lt;/li&gt;
 &lt;li&gt;Integer能使用等于号的范围是-128~127&lt;/li&gt;
-&lt;/ol&gt;</summary></entry></feed>
+&lt;/ol&gt;</summary><category term="java"></category></entry></feed>

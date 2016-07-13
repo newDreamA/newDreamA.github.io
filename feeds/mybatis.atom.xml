@@ -45,4 +45,4 @@ mySql的日期格式化示例： DATE_FORMAT(date,&amp;nbsp;format)   &lt;/p&gt;
 &lt;p&gt;&lt;span class="caps"&gt;ALTER&lt;/span&gt; &lt;span class="caps"&gt;TABLE&lt;/span&gt; table_name
 &lt;span class="caps"&gt;ADD&lt;/span&gt; &lt;span class="caps"&gt;COLUMN&lt;/span&gt; id  &lt;span class="caps"&gt;INT&lt;/span&gt;(11) &lt;span class="caps"&gt;NOT&lt;/span&gt; &lt;span class="caps"&gt;NULL&lt;/span&gt; AUTO_INCREMENT &lt;span class="caps"&gt;AFTER&lt;/span&gt; name_field,
 &lt;span class="caps"&gt;DROP&lt;/span&gt; &lt;span class="caps"&gt;PRIMARY&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt;,
-&lt;span class="caps"&gt;ADD&lt;/span&gt; &lt;span class="caps"&gt;PRIMARY&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt;&amp;nbsp;(id);&lt;/p&gt;</summary></entry></feed>
+&lt;span class="caps"&gt;ADD&lt;/span&gt; &lt;span class="caps"&gt;PRIMARY&lt;/span&gt; &lt;span class="caps"&gt;KEY&lt;/span&gt;&amp;nbsp;(id);&lt;/p&gt;</summary><category term="mysql"></category></entry></feed>
