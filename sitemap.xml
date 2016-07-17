@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://newDreamA.github.io/</loc>
-<lastmod>2016-07-17T16:25:35-00:00</lastmod>
+<lastmod>2016-07-17T16:31:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://newDreamA.github.io/archives.html</loc>
-<lastmod>2016-07-17T16:25:35-00:00</lastmod>
+<lastmod>2016-07-17T16:31:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://newDreamA.github.io/tags.html</loc>
-<lastmod>2016-07-17T16:25:35-00:00</lastmod>
+<lastmod>2016-07-17T16:31:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://newDreamA.github.io/categories.html</loc>
-<lastmod>2016-07-17T16:25:35-00:00</lastmod>
+<lastmod>2016-07-17T16:31:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -47,6 +47,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://newDreamA.github.io/springboot/springBoot修改内置容器端口号.html</loc>
+<lastmod>2016-07-13T08:11:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://newDreamA.github.io/springboot/springBoot入门.html</loc>
 <lastmod>2016-07-13T08:11:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -83,13 +90,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://newDreamA.github.io/springboot/springBoot与MyBatis整合示例.html</loc>
 <lastmod>2016-06-11T16:02:00+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://newDreamA.github.io/springboot/springBoot入门.html</loc>
-<lastmod>2016-06-10T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>

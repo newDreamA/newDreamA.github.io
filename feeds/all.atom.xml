@@ -123,7 +123,130 @@ new Thread(threadC).start();
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;/li&gt;
-&lt;/ol&gt;</summary><category term="springBoot"></category></entry><entry><title>java常见方法总结</title><link href="http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html" rel="alternate"></link><updated>2016-07-12T15:20:35+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:java/java常见方法总结.html</id><summary type="html">&lt;h2 id="java"&gt;java常见方法总结&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/ol&gt;</summary><category term="springBoot"></category></entry><entry><title>springBoot入门</title><link href="http://newDreamA.github.io/springboot/springBoot%E5%85%A5%E9%97%A8.html" rel="alternate"></link><updated>2016-07-13T08:11:00+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-13:springboot/springBoot入门.html</id><summary type="html">&lt;h2 id="gradlespringboot"&gt;gradle搭建SpringBoot开发环境&lt;a class="headerlink" href="#gradlespringboot" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;首先现在gradle&amp;nbsp;版本为2.2.1文件下载地址:http://gradle.org/gradle-download/&lt;/li&gt;
+&lt;li&gt;在intelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt; 14.0.2创建gradle项目&lt;br /&gt;
+(1) File-&amp;gt;New Product-&amp;gt;Gradle如图所示：
+&lt;img alt="图片" src="http://img.blog.csdn.net/20160103171314452?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" /&gt;
+（2）给工程命名为example:
+&lt;img alt="" src="http://img.blog.csdn.net/20160103171447963?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" /&gt;
+(3) 创建完成后工程的目录结构为：
+&lt;img alt="" src="http://img.blog.csdn.net/20160103171605338?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" /&gt;
+(4)在build.gradle中配置如下:&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apply plugin: &amp;#39;java&amp;#39;  
+sourceCompatibility = 1.8  
+version = &amp;#39;1.0&amp;#39;  
+buildscript {  
+    repositories {  
+        jcenter()  
+        mavenCentral()  
+    }  
+    dependencies {  
+        classpath(&amp;quot;org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE&amp;quot;)  
+    }  
+}
+
+apply plugin: &amp;#39;java&amp;#39;  
+apply plugin: &amp;#39;spring-boot&amp;#39;
+
+jar {  
+    baseName = &amp;#39;myproject&amp;#39;  
+    version =  &amp;#39;0.0.1-SNAPSHOT&amp;#39;  
+}
+
+repositories {  
+    jcenter()  
+    mavenCentral()  
+}
+
+dependencies {  
+    compile(&amp;quot;org.springframework.boot:spring-boot-starter-web&amp;quot;)  
+    testCompile(&amp;quot;org.springframework.boot:spring-boot-starter-test&amp;quot;)  
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(5)build项目:
+&lt;img alt="" src="http://img.blog.csdn.net/20160103171716774?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" /&gt;
+显示出gradle的界面，然后点击
+&lt;img alt="" src="http://img.blog.csdn.net/20160103171815818?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" /&gt;&lt;/p&gt;
+&lt;p&gt;然后程序会下载相应的jar包
+(6)创建个测试类
+&lt;img alt="" src="http://img.blog.csdn.net/20160103172029319?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" /&gt;
+测试类中的源码如下：
+    import org.springframework.boot.SpringApplication;&lt;br /&gt;
+    import org.springframework.boot.autoconfigure.EnableAutoConfiguration;&lt;br /&gt;
+    import org.springframework.web.bind.annotation.RequestMapping;&lt;br /&gt;
+    import&amp;nbsp;org.springframework.web.bind.annotation.RestController;  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cm"&gt;/** &lt;/span&gt;
+&lt;span class="cm"&gt; * Created by txw on 2015/12/29. &lt;/span&gt;
+&lt;span class="cm"&gt; */&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="err"&gt;@&lt;/span&gt;RestController&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="err"&gt;@&lt;/span&gt;EnableAutoConfiguration&lt;span class="w"&gt;  &lt;/span&gt;
+public&lt;span class="w"&gt; &lt;/span&gt;class&lt;span class="w"&gt; &lt;/span&gt;Example&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;RequestMapping&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;String&lt;span class="w"&gt; &lt;/span&gt;home&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kr"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;public&lt;span class="w"&gt; &lt;/span&gt;static&lt;span class="w"&gt; &lt;/span&gt;void&lt;span class="w"&gt; &lt;/span&gt;main&lt;span class="o"&gt;(&lt;/span&gt;String&lt;span class="err"&gt;[]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;args&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;throws&lt;span class="w"&gt; &lt;/span&gt;Exception&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;SpringApplication&lt;span class="o"&gt;.&lt;/span&gt;run&lt;span class="o"&gt;(&lt;/span&gt;Example&lt;span class="o"&gt;.&lt;/span&gt;class&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;args&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;然后运行，最后在浏览器中输入localhost:8080,出现如下结果表示成功！
+&lt;img alt="" src="http://img.blog.csdn.net/20160103172143912?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" /&gt;&lt;/p&gt;</summary><category term="springBoot"></category></entry><entry><title>java常见方法总结</title><link href="http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html" rel="alternate"></link><updated>2016-07-12T15:20:35+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-12:java/java常见方法总结.html</id><summary type="html">&lt;h2 id="java"&gt;java常见方法总结&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="1"&gt;1.指定随机数的生成范围&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
 2
@@ -409,4 +532,4 @@ compile &amp;quot;com.alibaba:fastjson:1.1.41&amp;quot;
 org.springframework.boot.autoconfigure.EnableAutoConfigur&amp;nbsp;ation=\com.jdbc.DataSourceAutoConfiguration&lt;/p&gt;
 &lt;p&gt;等于后面是类的全类名的形式即包名＋类名&lt;/p&gt;
 &lt;h3 id="_1"&gt;注意点&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;就是用使用myBatis时mapper中的java类和xml的包名要一致，还是就是用idea注意一下他的包结构，不然会报绑定错误！！！&lt;/p&gt;</summary><category term="springBoot"></category></entry><entry><title>springBoot入门</title><link href="http://newDreamA.github.io/springboot/springBoot%E5%85%A5%E9%97%A8.html" rel="alternate"></link><updated>2016-06-10T00:00:00+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-06-10:springboot/springBoot入门.html</id><summary type="html"></summary></entry></feed>
+&lt;p&gt;就是用使用myBatis时mapper中的java类和xml的包名要一致，还是就是用idea注意一下他的包结构，不然会报绑定错误！！！&lt;/p&gt;</summary><category term="springBoot"></category></entry></feed>
