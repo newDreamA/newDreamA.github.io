@@ -1,5 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Blog</title><link>http://newDreamA.github.io/</link><description></description><atom:link href="http://newDreamA.github.io/feeds/mr-tang.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 13 Jul 2016 08:11:00 +0800</lastBuildDate><item><title>springBoot修改内置容器的端口号</title><link>http://newDreamA.github.io/springboot/springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7.html</link><description>&lt;h2 id="springboot"&gt;SpringBoot修改内置容器的方法&lt;a class="headerlink" href="#springboot" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Blog</title><link>http://newDreamA.github.io/</link><description></description><atom:link href="http://newDreamA.github.io/feeds/mr-tang.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 16 Jul 2016 09:58:13 +0800</lastBuildDate><item><title>创建线程的方式</title><link>http://newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B1.html</link><description>&lt;h2 id="_1"&gt;线程的创建方式&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;继承Thread类&lt;/li&gt;
+&lt;li&gt;实现Runnable接口&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实现Callable接口
+继承Thread的实现方式:&lt;br /&gt;
+    public class ThreadA extends Thread｛
+      public void run(){
+        super.run();
+      }
+    ｝&amp;nbsp;实现Runnable接口的实现方式:&lt;/p&gt;
+&lt;p&gt;public class ThreadB implements Runnable{
+    public void run(){
+        super.run();
+    }
+}&amp;nbsp;实现Callable接口的call方法的实现方式：&lt;/p&gt;
+&lt;p&gt;import java.util.concurrent.Callable;
+public class ThreadC implements Callable&lt;String&gt;{
+    public String call()throws Exception{
+        System.out.println(&amp;#8220;ThreadC&amp;#8221;);
+        return &amp;#8220;ThreadC&amp;#8221;;
+    }
+}&amp;nbsp;以上三种方式的在main函数中应用&lt;/p&gt;
+&lt;p&gt;public static void mian(String[] args){
+    //线程A的启动方式
+    ThreadA threadA = new ThreadA();
+    threadA.start();
+    //线程B的启动方式
+    ThreadB threadB = new ThreadB();
+    new Thread(threadB).start();
+    //线程C的启动方式
+    ThreadC threadC = new ThreadC();
+FutureTask&lt;String&gt; task = new FutureTask&lt;String&gt;(threadC);
+new Thread(threadC).start();
+//获取线程的返回结果&amp;nbsp;task.get();&lt;/p&gt;
+&lt;p&gt;}&amp;nbsp;在没看有关线程的书籍之前我只知道有两种创建线程的方式，看了相关书籍才了解了还有第三种创建的方法，所以不能只局限于原来的知识。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Sat, 16 Jul 2016 09:58:13 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-16:thread/多线程1.html</guid><category>Threads</category></item><item><title>设计模式</title><link>http://newDreamA.github.io/she-ji-mo-shi-ji-lei/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.html</link><description>&lt;h2 id="_1"&gt;单例模式&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;单例：简而言之就是一个环境中只有一个实例  &lt;/p&gt;
+&lt;h4 id="java"&gt;java中单例模式的注意点有：&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;将他的构造函数私有化  &lt;/li&gt;
+&lt;li&gt;将对像声明为static  &lt;/li&gt;
+&lt;li&gt;不对外提供get和set方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="java3"&gt;java中的简单的3种&lt;a class="headerlink" href="#java3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;1.该获取单例的方法的缺点是不能控制何时生成实例&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public class SingltonDemo{
+  private static SingltonDemo instance;
+  private SingltonDemo(){}
+  public static SingltonDemo getInstance(){
+     return instance;
+  } 
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;2.该获取单例的方法有同步操作，性能用影响&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public class SingltonDemo｛
+ private static SingltonDemo instance=null;
+ private SingltonDemo(){}
+ pulic static SingltonDemo synchronized getInstance(){
+   if(instance==null){
+        instance=new SingltonDemo();
+   }
+｝
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;3.一个比较好的方法&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public class SingltonDemo{
+  private SingltonDemo(){}
+  private static class SingltonHelper{
+     private static SingltonDemo instance=new SingltonDemo();
+
+  }
+   public static SingltonDemo getInstance(){
+       return SingltonHelper.instance;
+     }
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Fri, 15 Jul 2016 10:54:12 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-15:she-ji-mo-shi-ji-lei/单例模式.html</guid><category>设计模式</category></item><item><title>springBoot修改内置容器的端口号</title><link>http://newDreamA.github.io/springboot/springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7.html</link><description>&lt;h2 id="springboot"&gt;SpringBoot修改内置容器的方法&lt;a class="headerlink" href="#springboot" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;第一个最简单的方法就是在application.yml配置，配置方法如下：&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Server settings
+ server:
+ port: 8080
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实现EmbeddedServletContainerCustomizer的customize的方法  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;container.setPort(8000)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Wed, 13 Jul 2016 08:11:00 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-13:springboot/springBoot修改内置容器端口号.html</guid><category>springBoot</category></item><item><title>springBoot修改内置容器的端口号</title><link>http://newDreamA.github.io/springboot/springBoot%E7%9A%84web%E5%BC%80%E5%8F%91.html</link><description>&lt;h2 id="springboot"&gt;SpringBoot修改内置容器的方法&lt;a class="headerlink" href="#springboot" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;第一个最简单的方法就是在application.yml配置，配置方法如下：&lt;/p&gt;
@@ -10,7 +134,10 @@
 &lt;li&gt;
 &lt;p&gt;实现EmbeddedServletContainerCustomizer的customize的方法&lt;br /&gt;&amp;nbsp;container.setPort(8000)&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Wed, 13 Jul 2016 08:11:00 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-13:springboot/springBoot修改内置容器端口号.html</guid><category>springBoot</category></item><item><title>java常见方法总结</title><link>http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html</link><description>&lt;h2 id="java"&gt;java常见方法总结&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/ol&gt;
+&lt;p&gt;@Bean
+  public InternalResourceViewResolver viewResolver(){
+  InternalResourceViewResolver view = newInternalResourceViewResolver()&amp;nbsp;}&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Wed, 13 Jul 2016 08:11:00 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-13:springboot/springBoot的web开发.html</guid><category>springBoot</category></item><item><title>java常见方法总结</title><link>http://newDreamA.github.io/java/java%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html</link><description>&lt;h2 id="java"&gt;java常见方法总结&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="1"&gt;1.指定随机数的生成范围&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
 2

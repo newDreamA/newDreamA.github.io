@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/thread.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-16T09:58:13+08:00</updated><entry><title>创建线程的方式</title><link href="http://newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B1.html" rel="alternate"></link><updated>2016-07-16T09:58:13+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-16:thread/多线程1.html</id><summary type="html">&lt;h2 id="_1"&gt;线程的创建方式&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;继承Thread类&lt;/li&gt;
+&lt;li&gt;实现Runnable接口&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实现Callable接口
+继承Thread的实现方式:&lt;br /&gt;
+    public class ThreadA extends Thread｛
+      public void run(){
+        super.run();
+      }
+    ｝&amp;nbsp;实现Runnable接口的实现方式:&lt;/p&gt;
+&lt;p&gt;public class ThreadB implements Runnable{
+    public void run(){
+        super.run();
+    }
+}&amp;nbsp;实现Callable接口的call方法的实现方式：&lt;/p&gt;
+&lt;p&gt;import java.util.concurrent.Callable;
+public class ThreadC implements Callable&lt;String&gt;{
+    public String call()throws Exception{
+        System.out.println(&amp;#8220;ThreadC&amp;#8221;);
+        return &amp;#8220;ThreadC&amp;#8221;;
+    }
+}&amp;nbsp;以上三种方式的在main函数中应用&lt;/p&gt;
+&lt;p&gt;public static void mian(String[] args){
+    //线程A的启动方式
+    ThreadA threadA = new ThreadA();
+    threadA.start();
+    //线程B的启动方式
+    ThreadB threadB = new ThreadB();
+    new Thread(threadB).start();
+    //线程C的启动方式
+    ThreadC threadC = new ThreadC();
+FutureTask&lt;String&gt; task = new FutureTask&lt;String&gt;(threadC);
+new Thread(threadC).start();
+//获取线程的返回结果&amp;nbsp;task.get();&lt;/p&gt;
+&lt;p&gt;}&amp;nbsp;在没看有关线程的书籍之前我只知道有两种创建线程的方式，看了相关书籍才了解了还有第三种创建的方法，所以不能只局限于原来的知识。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary><category term="Threads"></category></entry></feed>

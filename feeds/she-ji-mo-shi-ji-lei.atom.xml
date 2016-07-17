@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/she-ji-mo-shi-ji-lei.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-15T10:54:12+08:00</updated><entry><title>设计模式</title><link href="http://newDreamA.github.io/she-ji-mo-shi-ji-lei/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.html" rel="alternate"></link><updated>2016-07-15T10:54:12+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-15:she-ji-mo-shi-ji-lei/单例模式.html</id><summary type="html">&lt;h2 id="_1"&gt;单例模式&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;单例：简而言之就是一个环境中只有一个实例  &lt;/p&gt;
+&lt;h4 id="java"&gt;java中单例模式的注意点有：&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;将他的构造函数私有化  &lt;/li&gt;
+&lt;li&gt;将对像声明为static  &lt;/li&gt;
+&lt;li&gt;不对外提供get和set方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="java3"&gt;java中的简单的3种&lt;a class="headerlink" href="#java3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;1.该获取单例的方法的缺点是不能控制何时生成实例&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public class SingltonDemo{
+  private static SingltonDemo instance;
+  private SingltonDemo(){}
+  public static SingltonDemo getInstance(){
+     return instance;
+  } 
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;2.该获取单例的方法有同步操作，性能用影响&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public class SingltonDemo｛
+ private static SingltonDemo instance=null;
+ private SingltonDemo(){}
+ pulic static SingltonDemo synchronized getInstance(){
+   if(instance==null){
+        instance=new SingltonDemo();
+   }
+｝
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;3.一个比较好的方法&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public class SingltonDemo{
+  private SingltonDemo(){}
+  private static class SingltonHelper{
+     private static SingltonDemo instance=new SingltonDemo();
+
+  }
+   public static SingltonDemo getInstance(){
+       return SingltonHelper.instance;
+     }
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="设计模式"></category></entry></feed>

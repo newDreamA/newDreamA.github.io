@@ -13,13 +13,13 @@
 <meta name="keywords" content="springBoot, springBoot, " />
 
 <meta property="og:title" content="springBoot修改内置容器的端口号 "/>
-<meta property="og:url" content="http://newDreamA.github.io/springboot/springBoot修改内置容器端口号.html" />
-<meta property="og:description" content="SpringBoot修改内置容器的方法¶ 第一个最简单的方法就是在application.yml配置，配置方法如下： 1 2 3# Server settings server: port: 8080 实现EmbeddedServletContainerCustomizer的customize的方法 1container.setPort(8000)" />
+<meta property="og:url" content="http://newDreamA.github.io/springboot/springBoot的web开发.html" />
+<meta property="og:description" content="SpringBoot修改内置容器的方法¶ 第一个最简单的方法就是在application.yml配置，配置方法如下： # Server settings server: port: 8080 实现EmbeddedServletContainerCustomizer的customize的方法 container.setPort(8000) @Bean public InternalResourceViewResolver viewResolver(){ InternalResourceViewResolver view = newInternalResourceViewResolver() }" />
 <meta property="og:site_name" content="My Blog" />
 <meta property="og:article:author" content="Mr Tang" />
 <meta property="og:article:published_time" content="2016-07-13T08:11:00+08:00" />
 <meta name="twitter:title" content="springBoot修改内置容器的端口号 ">
-<meta name="twitter:description" content="SpringBoot修改内置容器的方法¶ 第一个最简单的方法就是在application.yml配置，配置方法如下： 1 2 3# Server settings server: port: 8080 实现EmbeddedServletContainerCustomizer的customize的方法 1container.setPort(8000)">
+<meta name="twitter:description" content="SpringBoot修改内置容器的方法¶ 第一个最简单的方法就是在application.yml配置，配置方法如下： # Server settings server: port: 8080 实现EmbeddedServletContainerCustomizer的customize的方法 container.setPort(8000) @Bean public InternalResourceViewResolver viewResolver(){ InternalResourceViewResolver view = newInternalResourceViewResolver() }">
 
         <title>springBoot修改内置容器的端口号  · My Blog
 </title>
@@ -68,7 +68,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://newDreamA.github.io/springboot/springBoot修改内置容器端口号.html"> springBoot修改内置容器的端口号  </a></h1>
+    <h1><a href="http://newDreamA.github.io/springboot/springBoot的web开发.html"> springBoot修改内置容器的端口号  </a></h1>
     </header>
 </div>
 
@@ -80,33 +80,27 @@
 <ol>
 <li>
 <p>第一个最简单的方法就是在application.yml配置，配置方法如下：</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span># Server settings
- server:
- port: 8080
-</pre></div>
-</td></tr></table>
-
+<p># Server settings
+     server:
+     port:&nbsp;8080</p>
 </li>
 <li>
-<p>实现EmbeddedServletContainerCustomizer的customize的方法  </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>container.setPort(8000)
-</pre></div>
-</td></tr></table>
-
+<p>实现EmbeddedServletContainerCustomizer的customize的方法<br />&nbsp;container.setPort(8000)</p>
 </li>
 </ol>
+<p>@Bean
+  public InternalResourceViewResolver viewResolver(){
+  InternalResourceViewResolver view = newInternalResourceViewResolver()&nbsp;}</p>
             <section>
     <p id="post-share-links">
     Share on:
-    <a href="http://twitter.com/home?status=springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%8F%B7%20http%3A//newDreamA.github.io/springboot/springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7.html" target="_blank" title="Share on Twitter">Twitter</a>
+    <a href="http://twitter.com/home?status=springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%8F%B7%20http%3A//newDreamA.github.io/springboot/springBoot%E7%9A%84web%E5%BC%80%E5%8F%91.html" target="_blank" title="Share on Twitter">Twitter</a>
     ❄
-    <a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//newDreamA.github.io/springboot/springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7.html" target="_blank" title="Share on Facebook">Facebook</a>
+    <a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//newDreamA.github.io/springboot/springBoot%E7%9A%84web%E5%BC%80%E5%8F%91.html" target="_blank" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="https://plus.google.com/share?url=http%3A//newDreamA.github.io/springboot/springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7.html" target="_blank" title="Share on Google Plus">Google+</a>
+    <a href="https://plus.google.com/share?url=http%3A//newDreamA.github.io/springboot/springBoot%E7%9A%84web%E5%BC%80%E5%8F%91.html" target="_blank" title="Share on Google Plus">Google+</a>
     ❄
-    <a href="mailto:?subject=springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%8F%B7&amp;body=http%3A//newDreamA.github.io/springboot/springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7.html" target="_blank" title="Share via Email">Email</a>
+    <a href="mailto:?subject=springBoot%E4%BF%AE%E6%94%B9%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%8F%B7&amp;body=http%3A//newDreamA.github.io/springboot/springBoot%E7%9A%84web%E5%BC%80%E5%8F%91.html" target="_blank" title="Share via Email">Email</a>
     </p>
 </section>
 
@@ -116,15 +110,15 @@
     <h2>Keep Reading</h2>
 <ul class="related-posts-list">
 <li><a href="http://newDreamA.github.io/springboot/springBoot与MyBatis整合示例.html" title="springBoot与MyBatis整合示例">springBoot与MyBatis整合示例</a></li>
-<li><a href="http://newDreamA.github.io/springboot/springBoot的web开发.html" title="springBoot修改内置容器的端口号">springBoot修改内置容器的端口号</a></li>
+<li><a href="http://newDreamA.github.io/springboot/springBoot修改内置容器端口号.html" title="springBoot修改内置容器的端口号">springBoot修改内置容器的端口号</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="http://newDreamA.github.io/springboot/springBoot的web开发.html" title="Previous: springBoot修改内置容器的端口号">springBoot修改内置容器的端口号</a></li>
-                <li class="next-article"><a href="http://newDreamA.github.io/she-ji-mo-shi-ji-lei/单例模式.html" title="Next: 设计模式">设计模式</a> »</li>
+                <li class="previous-article">« <a href="http://newDreamA.github.io/java/java常见方法总结.html" title="Previous: java常见方法总结">java常见方法总结</a></li>
+                <li class="next-article"><a href="http://newDreamA.github.io/springboot/springBoot修改内置容器端口号.html" title="Next: springBoot修改内置容器的端口号">springBoot修改内置容器的端口号</a> »</li>
             </ul>
             </nav>
             </aside>

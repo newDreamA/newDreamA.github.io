@@ -5,34 +5,55 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://newDreamA.github.io/</loc>
-<lastmod>2016-07-13T08:32:59-00:00</lastmod>
+<lastmod>2016-07-17T16:15:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://newDreamA.github.io/archives.html</loc>
-<lastmod>2016-07-13T08:32:59-00:00</lastmod>
+<lastmod>2016-07-17T16:15:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://newDreamA.github.io/tags.html</loc>
-<lastmod>2016-07-13T08:32:59-00:00</lastmod>
+<lastmod>2016-07-17T16:15:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://newDreamA.github.io/categories.html</loc>
-<lastmod>2016-07-13T08:32:59-00:00</lastmod>
+<lastmod>2016-07-17T16:15:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
+<loc>http://newDreamA.github.io/thread/多线程1.html</loc>
+<lastmod>2016-07-16T09:58:13+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://newDreamA.github.io/she-ji-mo-shi-ji-lei/单例模式.html</loc>
+<lastmod>2016-07-15T10:54:12+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://newDreamA.github.io/springboot/springBoot修改内置容器端口号.html</loc>
+<lastmod>2016-07-13T08:11:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://newDreamA.github.io/springboot/springBoot的web开发.html</loc>
 <lastmod>2016-07-13T08:11:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -102,8 +123,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://newDreamA.github.io/she-ji-mo-shi-ji-lei/index.html</loc>
+<lastmod>2016-07-15T10:54:12+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://newDreamA.github.io/springboot/index.html</loc>
 <lastmod>2016-07-13T08:11:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://newDreamA.github.io/thread/index.html</loc>
+<lastmod>2016-07-16T09:58:13+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
