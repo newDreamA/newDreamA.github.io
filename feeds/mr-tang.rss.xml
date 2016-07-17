@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Blog</title><link>http://newDreamA.github.io/</link><description></description><atom:link href="http://newDreamA.github.io/feeds/mr-tang.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 17 Jul 2016 16:22:13 +0800</lastBuildDate><item><title>创建线程的方式</title><link>http://newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B1.html</link><description>&lt;h2 id="_1"&gt;线程的创建方式&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Blog</title><link>http://newDreamA.github.io/</link><description></description><atom:link href="http://newDreamA.github.io/feeds/mr-tang.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 17 Jul 2016 16:22:13 +0800</lastBuildDate><item><title>创建线程的方式</title><link>http://newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA.html</link><description>&lt;h2 id="_1"&gt;线程的创建方式&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;继承Thread类&lt;/li&gt;
 &lt;li&gt;实现Runnable接口&lt;/li&gt;
@@ -37,7 +37,7 @@ new Thread(threadC).start();
 //获取线程的返回结果&amp;nbsp;task.get();&lt;/p&gt;
 &lt;p&gt;}&amp;nbsp;在没看有关线程的书籍之前我只知道有两种创建线程的方式，看了相关书籍才了解了还有第三种创建的方法，所以不能只局限于原来的知识。&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Sun, 17 Jul 2016 16:22:13 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-17:thread/多线程1.html</guid><category>Threads</category></item><item><title>设计模式</title><link>http://newDreamA.github.io/she-ji-mo-shi-ji-lei/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.html</link><description>&lt;h2 id="_1"&gt;单例模式&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Sun, 17 Jul 2016 16:22:13 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-17:thread/多线程之线程创建.html</guid><category>Threads</category></item><item><title>单例模式</title><link>http://newDreamA.github.io/she-ji-mo-shi-ji-lei/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.html</link><description>&lt;h2 id="_1"&gt;单例模式&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;单例：简而言之就是一个环境中只有一个实例  &lt;/p&gt;
 &lt;h4 id="java"&gt;java中单例模式的注意点有：&lt;a class="headerlink" href="#java" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
 &lt;ol&gt;
@@ -123,7 +123,7 @@ new Thread(threadC).start();
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;/li&gt;
-&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Wed, 13 Jul 2016 08:11:00 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-13:springboot/springBoot修改内置容器端口号.html</guid><category>springBoot</category></item><item><title>springBoot入门</title><link>http://newDreamA.github.io/springboot/springBoot%E5%85%A5%E9%97%A8.html</link><description>&lt;h2 id="gradlespringboot"&gt;gradle搭建SpringBoot开发环境&lt;a class="headerlink" href="#gradlespringboot" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Mr Tang</dc:creator><pubDate>Wed, 13 Jul 2016 21:08:11 +0800</pubDate><guid>tag:newDreamA.github.io,2016-07-13:springboot/springBoot修改内置容器端口号.html</guid><category>springBoot</category></item><item><title>springBoot入门</title><link>http://newDreamA.github.io/springboot/springBoot%E5%85%A5%E9%97%A8.html</link><description>&lt;h2 id="gradlespringboot"&gt;gradle搭建SpringBoot开发环境&lt;a class="headerlink" href="#gradlespringboot" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;首先现在gradle&amp;nbsp;版本为2.2.1文件下载地址:http://gradle.org/gradle-download/&lt;/li&gt;
 &lt;li&gt;在intelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt; 14.0.2创建gradle项目&lt;br /&gt;
