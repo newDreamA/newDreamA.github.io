@@ -49,26 +49,67 @@ b.需要自己手动释放锁资源 &lt;br /&gt;&amp;nbsp;4.多线程的合作�
 &lt;ol&gt;
 &lt;li&gt;继承Thread类&lt;/li&gt;
 &lt;li&gt;实现Runnable接口&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;实现Callable接口&amp;nbsp;继承Thread的实现方式:  &lt;/p&gt;
-&lt;p&gt;public class ThreadA extends Thread｛
+&lt;li&gt;实现Callable接口&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;继承Thread的实现方式:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public class ThreadA extends Thread｛
   public void run(){
     super.run();
   }
-｝&amp;nbsp;实现Runnable接口的实现方式:&lt;/p&gt;
-&lt;p&gt;public class ThreadB implements Runnable{
+｝
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;实现Runnable接口的实现方式:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public class ThreadB implements Runnable{
     public void run(){
         super.run();
     }
-}&amp;nbsp;实现Callable接口的call方法的实现方式：&lt;/p&gt;
-&lt;p&gt;import java.util.concurrent.Callable;
-public class ThreadC implements Callable&lt;String&gt;{
-    public String call()throws Exception{
-        System.out.println(&amp;#8220;ThreadC&amp;#8221;);
-        return &amp;#8220;ThreadC&amp;#8221;;
-    }
-}&amp;nbsp;以上三种方式的在main函数中应用&lt;/p&gt;
-&lt;p&gt;public static void mian(String[] args){
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;实现Callable接口的call方法的实现方式：&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.util.concurrent.Callable&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ThreadC&lt;/span&gt; &lt;span class="n"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;Callable&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="n"&gt;throws&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ThreadC&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ThreadC&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;以上三种方式的在main函数中应用&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public static void mian(String[] args){
     //线程A的启动方式
     ThreadA threadA = new ThreadA();
     threadA.start();
@@ -77,9 +118,13 @@ public class ThreadC implements Callable&lt;String&gt;{
     new Thread(threadB).start();
     //线程C的启动方式
     ThreadC threadC = new ThreadC();
-FutureTask&lt;String&gt; task = new FutureTask&lt;String&gt;(threadC);
+FutureTask&amp;lt;String&amp;gt; task = new FutureTask&amp;lt;String&amp;gt;(threadC);
 new Thread(threadC).start();
-//获取线程的返回结果&amp;nbsp;task.get();&lt;/p&gt;
-&lt;p&gt;}&amp;nbsp;在没看有关线程的书籍之前我只知道有两种创建线程的方式，看了相关书籍才了解了还有第三种创建的方法，所以不能只局限于原来的知识。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</summary><category term="Threads"></category></entry></feed>
+//获取线程的返回结果
+task.get();
+
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;在没看有关线程的书籍之前我只知道有两种创建线程的方式，看了相关书籍才了解了还有第三种创建的方法，所以不能只局限于原来的知识。&lt;/p&gt;</summary><category term="Threads"></category></entry></feed>

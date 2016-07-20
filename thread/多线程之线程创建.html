@@ -14,12 +14,12 @@
 
 <meta property="og:title" content="创建线程的方式 "/>
 <meta property="og:url" content="http://newDreamA.github.io/thread/多线程之线程创建.html" />
-<meta property="og:description" content="线程的创建方式¶ 继承Thread类 实现Runnable接口 实现Callable接口 继承Thread的实现方式: public class ThreadA extends Thread｛ public void run(){ super.run(); } ｝ 实现Runnable接口的实现方式: public class ThreadB implements Runnable{ public void run(){ super.run(); } } 实现Callable接口的call方法的实现方式： import java.util.concurrent.Callable; public class ThreadC implements Callable{ public String call()throws Exception{ System.out.println(“ThreadC”); return “ThreadC”; } } 以上三种方式的在main函数中应用 public ..." />
+<meta property="og:description" content="线程的创建方式¶ 继承Thread类 实现Runnable接口 实现Callable接口 继承Thread的实现方式: 1 2 3 4 5public class ThreadA extends Thread｛ public void run(){ super.run(); } ｝ 实现Runnable接口的实现方式: 1 2 3 4 5public class ThreadB implements Runnable{ public void run(){ super.run(); } } 实现Callable接口的call方法的实现方式： 1 2 3 4 5 6 7import java.util.concurrent.Callable; public ..." />
 <meta property="og:site_name" content="My Blog" />
 <meta property="og:article:author" content="Mr Tang" />
 <meta property="og:article:published_time" content="2016-07-17T16:22:13+08:00" />
 <meta name="twitter:title" content="创建线程的方式 ">
-<meta name="twitter:description" content="线程的创建方式¶ 继承Thread类 实现Runnable接口 实现Callable接口 继承Thread的实现方式: public class ThreadA extends Thread｛ public void run(){ super.run(); } ｝ 实现Runnable接口的实现方式: public class ThreadB implements Runnable{ public void run(){ super.run(); } } 实现Callable接口的call方法的实现方式： import java.util.concurrent.Callable; public class ThreadC implements Callable{ public String call()throws Exception{ System.out.println(“ThreadC”); return “ThreadC”; } } 以上三种方式的在main函数中应用 public ...">
+<meta name="twitter:description" content="线程的创建方式¶ 继承Thread类 实现Runnable接口 实现Callable接口 继承Thread的实现方式: 1 2 3 4 5public class ThreadA extends Thread｛ public void run(){ super.run(); } ｝ 实现Runnable接口的实现方式: 1 2 3 4 5public class ThreadB implements Runnable{ public void run(){ super.run(); } } 实现Callable接口的call方法的实现方式： 1 2 3 4 5 6 7import java.util.concurrent.Callable; public ...">
 
         <title>创建线程的方式  · My Blog
 </title>
@@ -80,26 +80,67 @@
 <ol>
 <li>继承Thread类</li>
 <li>实现Runnable接口</li>
-<li>
-<p>实现Callable接口&nbsp;继承Thread的实现方式:  </p>
-<p>public class ThreadA extends Thread｛
+<li>实现Callable接口</li>
+</ol>
+<p>继承Thread的实现方式:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>public class ThreadA extends Thread｛
   public void run(){
     super.run();
   }
-｝&nbsp;实现Runnable接口的实现方式:</p>
-<p>public class ThreadB implements Runnable{
+｝
+</pre></div>
+</td></tr></table>
+
+<p>实现Runnable接口的实现方式:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>public class ThreadB implements Runnable{
     public void run(){
         super.run();
     }
-}&nbsp;实现Callable接口的call方法的实现方式：</p>
-<p>import java.util.concurrent.Callable;
-public class ThreadC implements Callable<String>{
-    public String call()throws Exception{
-        System.out.println(&#8220;ThreadC&#8221;);
-        return &#8220;ThreadC&#8221;;
-    }
-}&nbsp;以上三种方式的在main函数中应用</p>
-<p>public static void mian(String[] args){
+}
+</pre></div>
+</td></tr></table>
+
+<p>实现Callable接口的call方法的实现方式：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.concurrent.Callable</span><span class="p">;</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ThreadC</span> <span class="n">implements</span> <span class="n">Callable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">{</span>
+    <span class="n">public</span> <span class="n">String</span> <span class="n">call</span><span class="p">()</span><span class="n">throws</span> <span class="ne">Exception</span><span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;ThreadC&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="s2">&quot;ThreadC&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>以上三种方式的在main函数中应用</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span>public static void mian(String[] args){
     //线程A的启动方式
     ThreadA threadA = new ThreadA();
     threadA.start();
@@ -108,12 +149,16 @@ public class ThreadC implements Callable<String>{
     new Thread(threadB).start();
     //线程C的启动方式
     ThreadC threadC = new ThreadC();
-FutureTask<String> task = new FutureTask<String>(threadC);
+FutureTask&lt;String&gt; task = new FutureTask&lt;String&gt;(threadC);
 new Thread(threadC).start();
-//获取线程的返回结果&nbsp;task.get();</p>
-<p>}&nbsp;在没看有关线程的书籍之前我只知道有两种创建线程的方式，看了相关书籍才了解了还有第三种创建的方法，所以不能只局限于原来的知识。</p>
-</li>
-</ol>
+//获取线程的返回结果
+task.get();
+
+}
+</pre></div>
+</td></tr></table>
+
+<p>在没看有关线程的书籍之前我只知道有两种创建线程的方式，看了相关书籍才了解了还有第三种创建的方法，所以不能只局限于原来的知识。</p>
             <section>
     <p id="post-share-links">
     Share on:
