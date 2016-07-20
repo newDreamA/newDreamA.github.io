@@ -14,12 +14,12 @@
 
 <meta property="og:title" content="创建线程的方式 "/>
 <meta property="og:url" content="http://newDreamA.github.io/thread/多线程之线程创建.html" />
-<meta property="og:description" content="线程的创建方式¶ 继承Thread类 实现Runnable接口 实现Callable接口 继承Thread的实现方式: public class ThreadA extends Thread｛ public void run(){ super.run(); } ｝ 实现Runnable接口的实现方式: public class ThreadB implements Runnable{ public void run(){ super.run(); } } 实现Callable接口的call方法的实现方式： import java.util.concurrent.Callable; public class ThreadC implements Callable{ public String call()throws Exception{ System.out.println(“ThreadC”); return “ThreadC”; } } 以上三种方式的在main函数中应用 public ..." />
+<meta property="og:description" content="线程的创建方式¶ 继承Thread类 实现Runnable接口 实现Callable接口 继承Thread的实现方式: public class ThreadA extends Thread｛ public void run(){ super.run(); } ｝ 实现Runnable接口的实现方式: public class ThreadB implements Runnable{ public void run(){ super.run(); } } 实现Callable接口的call方法的实现方式： import java.util.concurrent.Callable; public class ThreadC implements Callable{ public String call()throws Exception{ System.out.println(“ThreadC”); return “ThreadC”; } } 以上三种方式的在main函数中应用 public ..." />
 <meta property="og:site_name" content="My Blog" />
 <meta property="og:article:author" content="Mr Tang" />
 <meta property="og:article:published_time" content="2016-07-17T16:22:13+08:00" />
 <meta name="twitter:title" content="创建线程的方式 ">
-<meta name="twitter:description" content="线程的创建方式¶ 继承Thread类 实现Runnable接口 实现Callable接口 继承Thread的实现方式: public class ThreadA extends Thread｛ public void run(){ super.run(); } ｝ 实现Runnable接口的实现方式: public class ThreadB implements Runnable{ public void run(){ super.run(); } } 实现Callable接口的call方法的实现方式： import java.util.concurrent.Callable; public class ThreadC implements Callable{ public String call()throws Exception{ System.out.println(“ThreadC”); return “ThreadC”; } } 以上三种方式的在main函数中应用 public ...">
+<meta name="twitter:description" content="线程的创建方式¶ 继承Thread类 实现Runnable接口 实现Callable接口 继承Thread的实现方式: public class ThreadA extends Thread｛ public void run(){ super.run(); } ｝ 实现Runnable接口的实现方式: public class ThreadB implements Runnable{ public void run(){ super.run(); } } 实现Callable接口的call方法的实现方式： import java.util.concurrent.Callable; public class ThreadC implements Callable{ public String call()throws Exception{ System.out.println(“ThreadC”); return “ThreadC”; } } 以上三种方式的在main函数中应用 public ...">
 
         <title>创建线程的方式  · My Blog
 </title>
@@ -81,13 +81,12 @@
 <li>继承Thread类</li>
 <li>实现Runnable接口</li>
 <li>
-<p>实现Callable接口
-继承Thread的实现方式:<br />
-    public class ThreadA extends Thread｛
-      public void run(){
-        super.run();
-      }
-    ｝&nbsp;实现Runnable接口的实现方式:</p>
+<p>实现Callable接口&nbsp;继承Thread的实现方式:  </p>
+<p>public class ThreadA extends Thread｛
+  public void run(){
+    super.run();
+  }
+｝&nbsp;实现Runnable接口的实现方式:</p>
 <p>public class ThreadB implements Runnable{
     public void run(){
         super.run();

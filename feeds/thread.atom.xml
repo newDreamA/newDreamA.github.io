@@ -50,13 +50,12 @@ b.需要自己手动释放锁资源 &lt;br /&gt;&amp;nbsp;4.多线程的合作�
 &lt;li&gt;继承Thread类&lt;/li&gt;
 &lt;li&gt;实现Runnable接口&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;实现Callable接口
-继承Thread的实现方式:&lt;br /&gt;
-    public class ThreadA extends Thread｛
-      public void run(){
-        super.run();
-      }
-    ｝&amp;nbsp;实现Runnable接口的实现方式:&lt;/p&gt;
+&lt;p&gt;实现Callable接口&amp;nbsp;继承Thread的实现方式:  &lt;/p&gt;
+&lt;p&gt;public class ThreadA extends Thread｛
+  public void run(){
+    super.run();
+  }
+｝&amp;nbsp;实现Runnable接口的实现方式:&lt;/p&gt;
 &lt;p&gt;public class ThreadB implements Runnable{
     public void run(){
         super.run();
