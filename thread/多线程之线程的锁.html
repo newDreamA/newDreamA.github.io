@@ -10,18 +10,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Threads, Thread, " />
+<meta name="keywords" content="Thread, Thread, " />
 
-<meta property="og:title" content="创建线程的方式 "/>
-<meta property="og:url" content="http://newDreamA.github.io/thread/多线程之线程创建.html" />
-<meta property="og:description" content="线程的创建方式¶ 继承Thread类 实现Runnable接口 实现Callable接口 继承Thread的实现方式: public class ThreadA extends Thread｛ public void run(){ super.run(); } ｝ 实现Runnable接口的实现方式: public class ThreadB implements Runnable{ public void run(){ super.run(); } } 实现Callable接口的call方法的实现方式： import java.util.concurrent.Callable; public class ThreadC implements Callable{ public String call()throws Exception{ System.out.println(“ThreadC”); return “ThreadC”; } } 以上三种方式的在main函数中应用 public ..." />
+<meta property="og:title" content="线程的锁 "/>
+<meta property="og:url" content="http://newDreamA.github.io/thread/多线程之线程的锁.html" />
+<meta property="og:description" content="线程的锁¶ 隐式锁（内置锁）¶ synchronized的特点: 1.隐式锁一般的代码结构 a.在方法声明时使用，代码结构如下： 1 2public synchronized void synMethod(){ } b.修饰在代码块上 1 2 3synchronized(this){ //一次只能有一个线程进入 } 2.特点: a.释放锁的操作和获取锁的操作处于同一个代码块中，比较不方便灵活 b.是jvm级的锁 c.无需手动释放锁 3.多线程的合作使用wait和notify wait()：当一个对象实例上调用wait()方法后，当前线程就会在这个对象上等待，线程停止执行转为等待状态 notify():从等待队列中随机获取一个线程对其唤醒 notityAll():唤醒所有的线程 显示锁¶ 1.分类： a.重入锁 ReentrantLock b ..." />
 <meta property="og:site_name" content="My Blog" />
 <meta property="og:article:author" content="Mr Tang" />
-<meta property="og:article:published_time" content="2016-07-17T16:22:13+08:00" />
-<meta name="twitter:title" content="创建线程的方式 ">
-<meta name="twitter:description" content="线程的创建方式¶ 继承Thread类 实现Runnable接口 实现Callable接口 继承Thread的实现方式: public class ThreadA extends Thread｛ public void run(){ super.run(); } ｝ 实现Runnable接口的实现方式: public class ThreadB implements Runnable{ public void run(){ super.run(); } } 实现Callable接口的call方法的实现方式： import java.util.concurrent.Callable; public class ThreadC implements Callable{ public String call()throws Exception{ System.out.println(“ThreadC”); return “ThreadC”; } } 以上三种方式的在main函数中应用 public ...">
+<meta property="og:article:published_time" content="2016-07-20T08:30:00+08:00" />
+<meta name="twitter:title" content="线程的锁 ">
+<meta name="twitter:description" content="线程的锁¶ 隐式锁（内置锁）¶ synchronized的特点: 1.隐式锁一般的代码结构 a.在方法声明时使用，代码结构如下： 1 2public synchronized void synMethod(){ } b.修饰在代码块上 1 2 3synchronized(this){ //一次只能有一个线程进入 } 2.特点: a.释放锁的操作和获取锁的操作处于同一个代码块中，比较不方便灵活 b.是jvm级的锁 c.无需手动释放锁 3.多线程的合作使用wait和notify wait()：当一个对象实例上调用wait()方法后，当前线程就会在这个对象上等待，线程停止执行转为等待状态 notify():从等待队列中随机获取一个线程对其唤醒 notityAll():唤醒所有的线程 显示锁¶ 1.分类： a.重入锁 ReentrantLock b ...">
 
-        <title>创建线程的方式  · My Blog
+        <title>线程的锁  · My Blog
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -68,7 +68,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://newDreamA.github.io/thread/多线程之线程创建.html"> 创建线程的方式  </a></h1>
+    <h1><a href="http://newDreamA.github.io/thread/多线程之线程的锁.html"> 线程的锁  </a></h1>
     </header>
 </div>
 
@@ -76,55 +76,63 @@
         <div class="span8 offset2 article-content">
 
             
-            <h2 id="_1">线程的创建方式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>继承Thread类</li>
-<li>实现Runnable接口</li>
-<li>
-<p>实现Callable接口
-继承Thread的实现方式:<br />
-    public class ThreadA extends Thread｛
-      public void run(){
-        super.run();
-      }
-    ｝&nbsp;实现Runnable接口的实现方式:</p>
-<p>public class ThreadB implements Runnable{
-    public void run(){
-        super.run();
+            <h2 id="_1">线程的锁<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h4 id="_2">隐式锁（内置锁）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>synchronized的特点:&nbsp;1.隐式锁一般的代码结构</p>
+<p>a.在方法声明时使用，代码结构如下：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>public synchronized void synMethod(){
+}
+</pre></div>
+</td></tr></table>
+
+<p>b.修饰在代码块上</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>synchronized(this){
+//一次只能有一个线程进入
+}
+</pre></div>
+</td></tr></table>
+
+<p>2.特点:</p>
+<p>a.释放锁的操作和获取锁的操作处于同一个代码块中，比较不方便灵活
+b.是jvm级的锁<br />
+c.无需手动释放锁<br />
+3.多线程的合作使用wait和notify<br />
+wait()：当一个对象实例上调用wait()方法后，当前线程就会在这个对象上等待，线程停止执行转为等待状态<br />
+notify():从等待队列中随机获取一个线程对其唤醒<br />&nbsp;notityAll():唤醒所有的线程  </p>
+<h4 id="_3">显示锁<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>1.分类：
+a.重入锁  ReentrantLock <br />
+b.读写锁  ReentrantReadWriteLock&nbsp;2.显示锁的一般的代码结构: </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>     Lock lock = new ReentrantLock();
+     try{
+        lock.lock();
+     }finally{
+        lock.unlock();
     }
-}&nbsp;实现Callable接口的call方法的实现方式：</p>
-<p>import java.util.concurrent.Callable;
-public class ThreadC implements Callable<String>{
-    public String call()throws Exception{
-        System.out.println(&#8220;ThreadC&#8221;);
-        return &#8220;ThreadC&#8221;;
-    }
-}&nbsp;以上三种方式的在main函数中应用</p>
-<p>public static void mian(String[] args){
-    //线程A的启动方式
-    ThreadA threadA = new ThreadA();
-    threadA.start();
-    //线程B的启动方式
-    ThreadB threadB = new ThreadB();
-    new Thread(threadB).start();
-    //线程C的启动方式
-    ThreadC threadC = new ThreadC();
-FutureTask<String> task = new FutureTask<String>(threadC);
-new Thread(threadC).start();
-//获取线程的返回结果&nbsp;task.get();</p>
-<p>}&nbsp;在没看有关线程的书籍之前我只知道有两种创建线程的方式，看了相关书籍才了解了还有第三种创建的方法，所以不能只局限于原来的知识。</p>
-</li>
-</ol>
+</pre></div>
+</td></tr></table>
+
+<p>3.特点： </p>
+<p>a.使用tryLock()时可以定时，可以轮询，可中断  <br />
+b.需要自己手动释放锁资源<br />&nbsp;4.多线程的合作使用锁对象上newCondition返回对象的await()和singal()方法</p>
             <section>
     <p id="post-share-links">
     Share on:
-    <a href="http://twitter.com/home?status=%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%96%B9%E5%BC%8F%20http%3A//newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA.html" target="_blank" title="Share on Twitter">Twitter</a>
+    <a href="http://twitter.com/home?status=%E7%BA%BF%E7%A8%8B%E7%9A%84%E9%94%81%20http%3A//newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E7%9A%84%E9%94%81.html" target="_blank" title="Share on Twitter">Twitter</a>
     ❄
-    <a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA.html" target="_blank" title="Share on Facebook">Facebook</a>
+    <a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E7%9A%84%E9%94%81.html" target="_blank" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="https://plus.google.com/share?url=http%3A//newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA.html" target="_blank" title="Share on Google Plus">Google+</a>
+    <a href="https://plus.google.com/share?url=http%3A//newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E7%9A%84%E9%94%81.html" target="_blank" title="Share on Google Plus">Google+</a>
     ❄
-    <a href="mailto:?subject=%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%96%B9%E5%BC%8F&amp;body=http%3A//newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA.html" target="_blank" title="Share via Email">Email</a>
+    <a href="mailto:?subject=%E7%BA%BF%E7%A8%8B%E7%9A%84%E9%94%81&amp;body=http%3A//newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E7%9A%84%E9%94%81.html" target="_blank" title="Share via Email">Email</a>
     </p>
 </section>
 
@@ -133,8 +141,7 @@ new Thread(threadC).start();
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="http://newDreamA.github.io/she-ji-mo-shi-ji-lei/单例模式.html" title="Previous: 单例模式">单例模式</a></li>
-                <li class="next-article"><a href="http://newDreamA.github.io/thread/多线程之线程的锁.html" title="Next: 线程的锁">线程的锁</a> »</li>
+                <li class="previous-article">« <a href="http://newDreamA.github.io/thread/多线程之线程创建.html" title="Previous: 创建线程的方式">创建线程的方式</a></li>
             </ul>
             </nav>
             </aside>
@@ -142,12 +149,12 @@ new Thread(threadC).start();
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2016-07-17T16:22:13+08:00"> 7 17, 2016</time>
+            <time pubdate="pubdate" datetime="2016-07-20T08:30:00+08:00"> 7 20, 2016</time>
             <h4>Category</h4>
             <a class="category-link" href="http://newDreamA.github.io/categories.html#thread-ref">Thread</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="http://newDreamA.github.io/tags.html#threads-ref">Threads
+                <li><a href="http://newDreamA.github.io/tags.html#thread-ref">Thread
                     <span>1</span>
 </a></li>
             </ul>

@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/mr-tang.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-17T16:22:13+08:00</updated><entry><title>创建线程的方式</title><link href="http://newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA.html" rel="alternate"></link><updated>2016-07-17T16:22:13+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-17:thread/多线程之线程创建.html</id><summary type="html">&lt;h2 id="_1"&gt;线程的创建方式&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/mr-tang.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-20T08:30:00+08:00</updated><entry><title>线程的锁</title><link href="http://newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E7%9A%84%E9%94%81.html" rel="alternate"></link><updated>2016-07-20T08:30:00+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-20:thread/多线程之线程的锁.html</id><summary type="html">&lt;h2 id="_1"&gt;线程的锁&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h4 id="_2"&gt;隐式锁（内置锁）&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;synchronized的特点:&amp;nbsp;1.隐式锁一般的代码结构&lt;/p&gt;
+&lt;p&gt;a.在方法声明时使用，代码结构如下：&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public synchronized void synMethod(){
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;b.修饰在代码块上&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;synchronized(this){
+//一次只能有一个线程进入
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;2.特点:&lt;/p&gt;
+&lt;p&gt;a.释放锁的操作和获取锁的操作处于同一个代码块中，比较不方便灵活
+b.是jvm级的锁&lt;br /&gt;
+c.无需手动释放锁&lt;br /&gt;
+3.多线程的合作使用wait和notify&lt;br /&gt;
+wait()：当一个对象实例上调用wait()方法后，当前线程就会在这个对象上等待，线程停止执行转为等待状态&lt;br /&gt;
+notify():从等待队列中随机获取一个线程对其唤醒&lt;br /&gt;&amp;nbsp;notityAll():唤醒所有的线程  &lt;/p&gt;
+&lt;h4 id="_3"&gt;显示锁&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;1.分类：
+a.重入锁  ReentrantLock &lt;br /&gt;
+b.读写锁  ReentrantReadWriteLock&amp;nbsp;2.显示锁的一般的代码结构: &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;     Lock lock = new ReentrantLock();
+     try{
+        lock.lock();
+     }finally{
+        lock.unlock();
+    }
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;3.特点： &lt;/p&gt;
+&lt;p&gt;a.使用tryLock()时可以定时，可以轮询，可中断  &lt;br /&gt;
+b.需要自己手动释放锁资源&lt;br /&gt;&amp;nbsp;4.多线程的合作使用锁对象上newCondition返回对象的await()和singal()方法&lt;/p&gt;</summary><category term="Thread"></category></entry><entry><title>创建线程的方式</title><link href="http://newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA.html" rel="alternate"></link><updated>2016-07-17T16:22:13+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-17:thread/多线程之线程创建.html</id><summary type="html">&lt;h2 id="_1"&gt;线程的创建方式&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;继承Thread类&lt;/li&gt;
 &lt;li&gt;实现Runnable接口&lt;/li&gt;
