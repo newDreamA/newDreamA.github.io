@@ -14,12 +14,12 @@
 
 <meta property="og:title" content="线程的锁 "/>
 <meta property="og:url" content="http://newDreamA.github.io/thread/多线程之线程的锁.html" />
-<meta property="og:description" content="线程的锁¶ 隐式锁（内置锁）¶ synchronized的特点: 1.隐式锁一般的代码结构 a.在方法声明时使用，代码结构如下： 1 2public synchronized void synMethod(){ } b.修饰在代码块上 1 2 3synchronized(this){ //一次只能有一个线程进入 } 2.特点: a.释放锁的操作和获取锁的操作处于同一个代码块中，比较不方便灵活 b.是jvm级的锁 c.无需手动释放锁 3.多线程的合作使用wait和notify wait()：当一个对象实例上调用wait()方法后，当前线程就会在这个对象上等待，线程停止执行转为等待状态 notify():从等待队列中随机获取一个线程对其唤醒 notityAll():唤醒所有的线程 显示锁¶ 1.分类： a.重入锁 ReentrantLock b ..." />
+<meta property="og:description" content="线程的锁¶ 隐式锁（内置锁）¶ synchronized关键字说明: 1.隐式锁一般的代码结构 a.在方法声明时使用，代码结构如下： 1 2public synchronized void synMethod(){ } b.修饰在代码块上 1 2 3synchronized(this){ //一次只能有一个线程进入 } 2.特点: a.释放锁的操作和获取锁的操作处于同一个代码块中，比较不方便灵活 b.是jvm级的锁 c.无需手动释放锁 3.多线程的合作使用wait和notify wait()：当一个对象实例上调用wait()方法后，当前线程就会在这个对象上等待，线程停止执行转为等待状态 notify():从等待队列中随机获取一个线程对其唤醒 notityAll():唤醒所有的线程 显示锁¶ 1.分类： a.重入锁 ReentrantLock b ..." />
 <meta property="og:site_name" content="My Blog" />
 <meta property="og:article:author" content="Mr Tang" />
 <meta property="og:article:published_time" content="2016-07-20T08:30:00+08:00" />
 <meta name="twitter:title" content="线程的锁 ">
-<meta name="twitter:description" content="线程的锁¶ 隐式锁（内置锁）¶ synchronized的特点: 1.隐式锁一般的代码结构 a.在方法声明时使用，代码结构如下： 1 2public synchronized void synMethod(){ } b.修饰在代码块上 1 2 3synchronized(this){ //一次只能有一个线程进入 } 2.特点: a.释放锁的操作和获取锁的操作处于同一个代码块中，比较不方便灵活 b.是jvm级的锁 c.无需手动释放锁 3.多线程的合作使用wait和notify wait()：当一个对象实例上调用wait()方法后，当前线程就会在这个对象上等待，线程停止执行转为等待状态 notify():从等待队列中随机获取一个线程对其唤醒 notityAll():唤醒所有的线程 显示锁¶ 1.分类： a.重入锁 ReentrantLock b ...">
+<meta name="twitter:description" content="线程的锁¶ 隐式锁（内置锁）¶ synchronized关键字说明: 1.隐式锁一般的代码结构 a.在方法声明时使用，代码结构如下： 1 2public synchronized void synMethod(){ } b.修饰在代码块上 1 2 3synchronized(this){ //一次只能有一个线程进入 } 2.特点: a.释放锁的操作和获取锁的操作处于同一个代码块中，比较不方便灵活 b.是jvm级的锁 c.无需手动释放锁 3.多线程的合作使用wait和notify wait()：当一个对象实例上调用wait()方法后，当前线程就会在这个对象上等待，线程停止执行转为等待状态 notify():从等待队列中随机获取一个线程对其唤醒 notityAll():唤醒所有的线程 显示锁¶ 1.分类： a.重入锁 ReentrantLock b ...">
 
         <title>线程的锁  · My Blog
 </title>
@@ -78,8 +78,8 @@
             
             <h2 id="_1">线程的锁<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h4 id="_2">隐式锁（内置锁）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>synchronized的特点:&nbsp;1.隐式锁一般的代码结构</p>
-<p>a.在方法声明时使用，代码结构如下：</p>
+<p>synchronized关键字说明: <br />
+1.隐式锁一般的代码结构<br />&nbsp;a.在方法声明时使用，代码结构如下：</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>public synchronized void synMethod(){
 }

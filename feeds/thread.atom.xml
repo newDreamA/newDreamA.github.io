@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>My Blog</title><link href="http://newDreamA.github.io/" rel="alternate"></link><link href="http://newDreamA.github.io/feeds/thread.atom.xml" rel="self"></link><id>http://newDreamA.github.io/</id><updated>2016-07-20T08:30:00+08:00</updated><entry><title>线程的锁</title><link href="http://newDreamA.github.io/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E7%9A%84%E9%94%81.html" rel="alternate"></link><updated>2016-07-20T08:30:00+08:00</updated><author><name>Mr Tang</name></author><id>tag:newDreamA.github.io,2016-07-20:thread/多线程之线程的锁.html</id><summary type="html">&lt;h2 id="_1"&gt;线程的锁&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h4 id="_2"&gt;隐式锁（内置锁）&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;synchronized的特点:&amp;nbsp;1.隐式锁一般的代码结构&lt;/p&gt;
-&lt;p&gt;a.在方法声明时使用，代码结构如下：&lt;/p&gt;
+&lt;p&gt;synchronized关键字说明: &lt;br /&gt;
+1.隐式锁一般的代码结构&lt;br /&gt;&amp;nbsp;a.在方法声明时使用，代码结构如下：&lt;/p&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
 2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;public synchronized void synMethod(){
 }
